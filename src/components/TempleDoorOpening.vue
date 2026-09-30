@@ -4,7 +4,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const props = defineProps({
   currentLang: {
     type: String,
-    default: 'en'
+    default: 'tm'
   }
 })
 

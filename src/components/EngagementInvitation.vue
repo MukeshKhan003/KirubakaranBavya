@@ -5,7 +5,7 @@ import TempleDoorOpening from './TempleDoorOpening.vue'
 // ══════════════════════════════════════════════════════════════════════════
 // 1. LANGUAGE SUPPORT (ENGLISH & TAMIL)
 // ══════════════════════════════════════════════════════════════════════════
-const currentLang = ref('en')
+const currentLang = ref('tm')
 
 // Multilingual Translations Dictionary
 const translations = {
@@ -34,13 +34,11 @@ const translations = {
     venueSub: 'Cuddalore District, Tamil Nadu',
     openInMapsBtn: 'Open in Maps',
     // Parents Invitation Section
-    parentsTitle: 'அன்புடன்',
-    groomParentsLabel: 'மணமகன் பெற்றோர்',
-    groomParents: 'நக்கீரன், செல்வராணி',
-    groomParentsSub: 'Nakkeeran, Selvarani',
-    brideParentsLabel: 'மணமகள் பெற்றோர்',
-    brideParents: 'மோகன், அகில பிரியா',
-    brideParentsSub: 'Mohan, Akhila Priya',
+    parentsTitle: 'With Love',
+    groomParentsLabel: "Groom's Parents",
+    groomParents: 'R. Nakeeran, N. Selvarani',
+    brideParentsLabel: "Bride's Parents",
+    brideParents: 'K.M. Mohan, M. Akila Priya',
     // Bottom Decorative Quote
     bottomQuote: '“Your Presence will make our day more special”'
   },
@@ -71,18 +69,16 @@ const translations = {
     // Parents Invitation Section
     parentsTitle: 'அன்புடன்',
     groomParentsLabel: 'மணமகன் பெற்றோர்',
-    groomParents: 'நக்கீரன், செல்வராணி',
-    groomParentsSub: '',
+    groomParents: 'R. நக்கீரன், N. செல்வராணி',
     brideParentsLabel: 'மணமகள் பெற்றோர்',
-    brideParents: 'மோகன், அகில பிரியா',
-    brideParentsSub: '',
+    brideParents: 'K.M. மோகன், M. அகில பிரியா',
     // Bottom Decorative Quote
     bottomQuote: '“தங்களின் வருகை எங்கள் நன்னாளை மேலும் சிறப்பாக்கும்”'
   }
 }
 
 // Current active translation accessor
-const t = computed(() => translations[currentLang.value] || translations.en)
+const t = computed(() => translations[currentLang.value] || translations.tm)
 
 // Synchronize Language from URL (/lang-en or /lang-tm)
 const syncLangFromUrl = () => {
@@ -90,12 +86,11 @@ const syncLangFromUrl = () => {
   const path = window.location.pathname.toLowerCase()
   const search = window.location.search.toLowerCase()
   const hash = window.location.hash.toLowerCase()
-  if (path.includes('lang-tm') || search.includes('lang=tm') || hash.includes('lang-tm')) {
-    currentLang.value = 'tm'
-  } else if (path.includes('lang-en') || search.includes('lang=en') || hash.includes('lang-en')) {
+  if (path.includes('lang-en') || search.includes('lang=en') || hash.includes('lang-en')) {
     currentLang.value = 'en'
   } else {
-    currentLang.value = 'en'
+    // Default to Tamil on initial page load
+    currentLang.value = 'tm'
   }
 }
 
@@ -501,7 +496,6 @@ onUnmounted(() => {
             <div class="parents-col parents-col-groom">
               <span class="parents-role-badge">{{ t.groomParentsLabel }}</span>
               <div class="parents-name-text">{{ t.groomParents }}</div>
-              <div v-if="t.groomParentsSub" class="parents-name-sub">{{ t.groomParentsSub }}</div>
             </div>
 
             <!-- Center Auspicious Diya Divider -->
@@ -513,7 +507,6 @@ onUnmounted(() => {
             <div class="parents-col parents-col-bride">
               <span class="parents-role-badge">{{ t.brideParentsLabel }}</span>
               <div class="parents-name-text">{{ t.brideParents }}</div>
-              <div v-if="t.brideParentsSub" class="parents-name-sub">{{ t.brideParentsSub }}</div>
             </div>
           </div>
         </div>
@@ -540,6 +533,29 @@ onUnmounted(() => {
           <span class="ornament-symbol">🪔</span>
           <span class="ornament-line"></span>
         </div>
+        <!-- Language Switcher in Footer (Accessible on all devices including Mobile) -->
+        <div class="footer-lang-pill-wrap">
+          <button 
+            type="button"
+            @click="setLanguage('tm')" 
+            class="footer-lang-btn" 
+            :class="{ active: currentLang === 'tm' }"
+            title="தமிழில் பார்க்க"
+          >
+            தமிழ்
+          </button>
+          <span class="footer-lang-sep">•</span>
+          <button 
+            type="button"
+            @click="setLanguage('en')" 
+            class="footer-lang-btn" 
+            :class="{ active: currentLang === 'en' }"
+            title="View in English"
+          >
+            English
+          </button>
+        </div>
+
         <a 
           href="https://invitesend.com" 
           target="_blank" 

@@ -880,6 +880,47 @@ html, body {
   color: #fbbf24;
 }
 
+.footer-lang-pill-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(30, 8, 8, 0.85);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  border-radius: 999px;
+  padding: 0.25rem 0.65rem;
+  margin-bottom: 0.25rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.footer-lang-btn {
+  background: transparent;
+  border: none;
+  color: #fed7aa;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.footer-lang-btn:hover {
+  color: #fbbf24;
+}
+
+.footer-lang-btn.active {
+  background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+  color: #1e0505;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.4);
+}
+
+.footer-lang-sep {
+  color: rgba(251, 191, 36, 0.35);
+  font-size: 0.75rem;
+}
+
 .footer-credits-link {
   display: inline-flex;
   align-items: center;
@@ -995,7 +1036,36 @@ html, body {
   }
 
   .wedding-names-animated {
-    font-size: clamp(2rem, 7vw, 2.75rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15rem;
+    font-size: clamp(2rem, 7.2vw, 2.75rem);
+    line-height: 1.18;
+  }
+
+  .wedding-names-animated .name-block {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .wedding-names-animated .heart-symbol-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.35rem 0;
+  }
+
+  .wedding-names-animated .heart-symbol-block .names-heart-svg {
+    width: 0.85em;
+    height: 0.85em;
+  }
+
+  .wedding-theme-k.lang-tamil .wedding-names-animated {
+    font-size: clamp(1.85rem, 6.5vw, 2.45rem);
+    line-height: 1.22;
   }
 
   .animated-subtitle {
