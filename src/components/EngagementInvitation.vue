@@ -11,9 +11,9 @@ const currentLang = ref('tm')
 const translations = {
   en: {
     bannerText: 'நமசிவாய எனும் மங்கள நாதத்துடன்… சிவனும் சக்தியும் சாட்சியாக, இரு உள்ளங்கள் இணையும் திருநாள்…',
-    groomName: 'KIRUBAKARAN',
+    groomName: 'M. KIRUBAKARAN',
     connector: '❤',
-    brideName: 'BHAVYA',
+    brideName: 'N. BHAVYA',
     invitationSubtitle: 'Are Inviting You to Their Sacred Engagement',
     dateFormatted: '25.10.2026',
     timeFormatted: '10.30AM - 12:00PM',
@@ -21,7 +21,7 @@ const translations = {
     ceremonyConcluded: "🔔 Ceremony Concluded with Lord Shiva & Goddess Parvati's Divine Blessings",
     // Redesigned Details Section
     detailsTitle: '🪔 Sacred Engagement Covenant 🪔',
-    detailsDesc: 'Together with our families, we cordially invite you to the auspicious Engagement Ceremony of Kirubakaran and Bhavya.',
+    detailsDesc: 'Together with our families, we cordially invite you to the auspicious Engagement Ceremony of M. Kirubakaran and N. Bhavya.',
     // Three Segments
     dateLabel: 'Date',
     dateVal: '25.10.2026',
@@ -44,9 +44,9 @@ const translations = {
   },
   tm: {
     bannerText: 'நமசிவாய எனும் மங்கள நாதத்துடன்… சிவனும் சக்தியும் சாட்சியாக, இரு உள்ளங்கள் இணையும் திருநாள்…',
-    groomName: 'கிருபாகரன்',
+    groomName: 'M. கிருபாகரன்',
     connector: '❤',
-    brideName: 'பவ்யா',
+    brideName: 'N. பவ்யா',
     invitationSubtitle: 'தங்களை அன்புடன் எங்களது நிச்சயதார்த்த விழாவிற்கு அழைக்கிறோம்',
     dateFormatted: '25.10.2026',
     timeFormatted: 'காலை 10.30 - நண்பகல் 12.00',
@@ -54,7 +54,7 @@ const translations = {
     ceremonyConcluded: '🔔 சிவ பார்வதி திருவருளுடன் நிச்சயதார்த்த விழா இனிதே நிறைவடைந்தது',
     // Redesigned Details Section
     detailsTitle: '🪔 சுப நிச்சயதார்த்த விழா 🪔',
-    detailsDesc: 'எங்கள் குடும்பத்தாருடன் இணைந்து, கிருபாகரன் மற்றும் பவ்யா ஆகியோரின் சுப நிச்சயதார்த்த விழாவிற்கு தங்களை அன்போடு அழைக்கிறோம்.',
+    detailsDesc: 'எங்கள் குடும்பத்தாருடன் இணைந்து, M. கிருபாகரன் மற்றும் N. பவ்யா ஆகியோரின் சுப நிச்சயதார்த்த விழாவிற்கு தங்களை அன்போடு அழைக்கிறோம்.',
     // Three Segments
     dateLabel: 'தேதி',
     dateVal: '25.10.2026',
