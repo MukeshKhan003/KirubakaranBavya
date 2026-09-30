@@ -1,0 +1,835 @@
+/* ==========================================================================
+   Kirubakaran & Bhavya Engagement Ceremony
+   Design: Temple Bells & Blessings Architecture (Multilingual: EN & TM)
+   ========================================================================== */
+
+/* ── Reset and Root Setup ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background: #1e0505;
+  color: #ffedd5;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   1. TEMPLE BELLS & BLESSINGS BASE THEME
+   ══════════════════════════════════════════════════════════════════════════ */
+.wedding-theme-k {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #450a0a 0%, #2a0808 45%, #150303 90%);
+  color: #ffedd5;
+  font-family: 'Outfit', sans-serif;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* ── Temple Door Reveal Transitions ── */
+.wedding-theme-k.door-closed-theme {
+  max-height: 100vh;
+  overflow: hidden !important;
+}
+
+.wedding-invitation-inner-wrap {
+  opacity: 0;
+  transform: scale(0.96);
+  filter: blur(12px);
+  transition: 
+    opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1), 
+    transform 1.8s cubic-bezier(0.16, 1, 0.3, 1), 
+    filter 1.5s ease;
+  will-change: opacity, transform, filter;
+  pointer-events: none;
+}
+
+.wedding-invitation-inner-wrap.door-revealed {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+}
+
+.wedding-invitation-inner-wrap.door-opened-clear {
+  pointer-events: auto;
+}
+
+/* Tamil Font Overrides */
+.wedding-theme-k.lang-tamil {
+  font-family: 'Noto Sans Tamil', 'Outfit', sans-serif;
+}
+
+.wedding-theme-k.lang-tamil .wedding-names-animated {
+  font-family: 'Noto Serif Tamil', Georgia, serif;
+  font-size: clamp(2.3rem, 6.2vw, 3.4rem);
+  letter-spacing: 0.02em;
+}
+
+.wedding-theme-k.lang-tamil .divine-section-title {
+  font-family: 'Noto Serif Tamil', Georgia, serif;
+}
+
+.wedding-theme-k.lang-tamil .segment-main-val,
+.wedding-theme-k.lang-tamil .segment-venue-title {
+  font-family: 'Noto Serif Tamil', Georgia, serif;
+}
+
+.wedding-theme-k.lang-tamil .bottom-presence-quote {
+  font-family: 'Noto Serif Tamil', 'Great Vibes', serif;
+  font-size: clamp(1.05rem, 2.6vw, 1.35rem);
+  font-weight: 600;
+}
+
+/* ── Traditional Temple Gopuram Pillars Animation ── */
+.temple-animation-gopurams {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.gopuram-pillar-img {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: auto;
+  mix-blend-mode: screen;
+  filter: brightness(105%) contrast(110%);
+  opacity: 0.95;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.pillar-left {
+  left: 0;
+  animation: slidePillarLeft 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.pillar-right {
+  right: 0;
+  animation: slidePillarRight 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slidePillarLeft {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes slidePillarRight {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(0); }
+}
+
+/* ── Sacred Invocations Top Header Bar (Pinned to Top) ── */
+.divine-blessings-banner {
+  position: absolute;
+  top: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  padding: 0.4rem 1.4rem;
+  background: rgba(30, 8, 8, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(251, 191, 36, 0.38);
+  border-radius: 999px;
+  font-size: clamp(0.72rem, 1.5vw, 0.84rem);
+  color: #fbbf24;
+  letter-spacing: 0.03em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  max-width: min(92vw, 760px);
+  text-align: center;
+  line-height: 1.4;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 0 15px rgba(251, 191, 36, 0.2);
+  animation: fadeInDown 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.blessing-text {
+  font-family: 'Noto Serif Tamil', 'Outfit', Georgia, serif;
+  font-weight: 600;
+}
+
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translate(-50%, -20px); }
+  100% { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* ── Language Switcher Pill Container ── */
+.lang-switch-container {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.75rem;
+  z-index: 25;
+}
+
+.lang-switch-pill {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(30, 8, 8, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(251, 191, 36, 0.45);
+  border-radius: 999px;
+  padding: 0.25rem 0.5rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.55), 0 0 12px rgba(251, 191, 36, 0.15);
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  color: #fed7aa;
+  font-size: 0.84rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+
+.lang-btn:hover {
+  color: #fbbf24;
+}
+
+.lang-btn.active {
+  background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+  color: #1e0505;
+  font-weight: 800;
+  box-shadow: 0 2px 10px rgba(217, 119, 6, 0.5);
+}
+
+.lang-sep {
+  color: rgba(251, 191, 36, 0.35);
+  font-size: 0.75rem;
+  margin: 0 0.15rem;
+}
+
+/* ── Hanging Swinging Brass Temple Bell ── */
+.hanging-bell-wrapper {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  width: 16rem;
+  max-width: 42vw;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  transform-origin: top center;
+  animation: dropBell 2s cubic-bezier(0.16, 1, 0.3, 1) forwards, swingBell 4s ease-in-out infinite 2s;
+}
+
+.temple-brass-bell {
+  width: 100%;
+  height: auto;
+  mix-blend-mode: screen;
+  filter: brightness(108%) contrast(115%);
+}
+
+@keyframes dropBell {
+  0% { transform: translate(-50%, -100%); }
+  100% { transform: translate(-50%, 0); }
+}
+
+@keyframes swingBell {
+  0%, 100% { transform: translate(-50%, 0) rotate(0deg); }
+  25% { transform: translate(-50%, 0) rotate(4deg); }
+  75% { transform: translate(-50%, 0) rotate(-4deg); }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   2. SIVAN AND PARVATI DIVINE WATERMARK BACKGROUND
+   ══════════════════════════════════════════════════════════════════════════ */
+.divine-murugan-bg.divine-sivan-parvati-bg {
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(88vw, 620px);
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.4s ease, filter 0.4s ease;
+}
+
+.divine-sivan-parvati-bg.gold-style {
+  opacity: 0.48;
+  mix-blend-mode: screen;
+}
+
+.divine-sivan-parvati-bg:not(.gold-style) {
+  opacity: 0.48;
+  mix-blend-mode: screen;
+}
+
+.sivan-parvati-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(110%) contrast(115%);
+  animation: pulseAura 6s ease-in-out infinite alternate;
+}
+
+@keyframes pulseAura {
+  0% { transform: scale(1); filter: brightness(105%) contrast(110%); }
+  100% { transform: scale(1.02); filter: brightness(115%) contrast(120%); }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   3. HERO SECTION & ANIMATED COUPLE NAMES (TEMPLE BELLS SIGNATURE)
+   ══════════════════════════════════════════════════════════════════════════ */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  padding: 2rem 1rem 1.25rem;
+  min-height: auto;
+}
+
+.animated-names-container {
+  margin-top: 18rem;
+  z-index: 5;
+  text-align: center;
+}
+
+.wedding-names-animated {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #fbbf24;
+  text-shadow: 0 0 20px rgba(251, 191, 36, 0.45);
+  letter-spacing: 0.05em;
+  line-height: 1.15;
+}
+
+.wedding-names-animated .name-block {
+  display: inline-block;
+}
+
+.wedding-names-animated .amp-block {
+  display: inline-block;
+  margin: 0 0.6rem;
+  color: #f59e0b;
+  font-weight: 400;
+}
+
+.animated-subtitle {
+  font-size: 1.15rem;
+  color: #ffedd5;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 0.75rem;
+  font-weight: 500;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* ── Auspicious Countdown Timer ── */
+.countdown-widget-animated {
+  background: rgba(20, 5, 5, 0.85);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  padding: 1.4rem 1.8rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(251, 191, 36, 0.08);
+  width: 100%;
+  max-width: 520px;
+  margin: 1.5rem auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown-lbl {
+  font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.1rem, 3.5vw, 1.45rem);
+  font-weight: 700;
+  color: #fbbf24;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+  text-shadow: 0 0 12px rgba(251, 191, 36, 0.45);
+}
+
+.countdown-val {
+  font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.35rem, 4.5vw, 2.1rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  font-variant-numeric: tabular-nums;
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(251, 191, 36, 0.4);
+  margin-top: 0.4rem;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+
+.event-ended-badge-animated {
+  background: rgba(251, 191, 36, 0.15);
+  border: 1px solid #fbbf24;
+  color: #fbbf24;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   4. REDESIGNED DETAILS SECTION (THREE SEPARATE SEGMENTS: DATE, TIME, VENUE)
+   ══════════════════════════════════════════════════════════════════════════ */
+.details-section.container {
+  width: 100%;
+  max-width: 820px;
+  margin: 12rem auto 0;
+  padding: 0.5rem 1rem 4rem;
+  position: relative;
+  z-index: 10;
+}
+
+.divine-details-card {
+  background: rgba(30, 8, 8, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  border-radius: 1.5rem;
+  padding: 3rem 2.25rem 2.5rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.65), 0 0 25px rgba(251, 191, 36, 0.15);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.divine-section-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  color: #fbbf24;
+  text-shadow: 0 0 12px rgba(251, 191, 36, 0.4);
+}
+
+.divine-desc-p {
+  color: #fed7aa;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.95;
+}
+
+/* Three Separate Segments Grid */
+.segments-triad-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+  margin: 0.75rem 0;
+}
+
+.details-segment-card {
+  background: rgba(38, 9, 9, 0.75);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  border-radius: 1.25rem;
+  padding: 2rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(251, 191, 36, 0.05);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.details-segment-card:hover {
+  transform: translateY(-4px);
+  border-color: #fbbf24;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(251, 191, 36, 0.2);
+}
+
+.segment-icon-glow {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(251, 191, 36, 0.12);
+  border: 1.5px solid rgba(251, 191, 36, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fbbf24;
+  margin-bottom: 0.9rem;
+  box-shadow: 0 4px 15px rgba(251, 191, 36, 0.2);
+}
+
+.segment-icon-svg {
+  width: 26px;
+  height: 26px;
+  display: block;
+}
+
+.segment-tag {
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #fbbf24;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+
+.segment-main-val {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+}
+
+.segment-venue-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.4;
+  margin-bottom: 0.25rem;
+}
+
+.segment-sub-val {
+  font-size: 0.88rem;
+  color: #fed7aa;
+  opacity: 0.85;
+  margin-top: 0.35rem;
+}
+
+.venue-action-wrapper {
+  margin-top: 1.25rem;
+  width: 100%;
+}
+
+.btn-maps-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.6rem;
+  background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+  color: #1e0505;
+  font-weight: 700;
+  font-size: 0.92rem;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 4px 18px rgba(217, 119, 6, 0.4);
+  transition: all 0.25s ease;
+}
+
+.btn-maps-action:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 25px rgba(217, 119, 6, 0.6);
+  color: #000;
+}
+
+.btn-maps-pin {
+  font-size: 1.1rem;
+}
+
+.btn-maps-arrow {
+  font-size: 0.95rem;
+  font-weight: 900;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   5. BOTTOM DECORATIVE QUOTE (GREAT VIBES FONT)
+   ══════════════════════════════════════════════════════════════════════════ */
+.bottom-presence-quote-container {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(251, 191, 36, 0.25);
+  text-align: center;
+}
+
+.quote-accent-sprig {
+  color: #fbbf24;
+  font-size: 1.25rem;
+  margin-bottom: 0.35rem;
+  opacity: 0.85;
+}
+
+.bottom-presence-quote {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(1.3rem, 3.2vw, 1.75rem);
+  color: #fef08a;
+  letter-spacing: 0.03em;
+  line-height: 1.45;
+  text-shadow: 0 0 12px rgba(251, 191, 36, 0.4);
+  margin: 0 auto;
+  max-width: 580px;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   6. FLOATING AUDIO / MUSIC PLAYER WIDGET (ICON ONLY)
+   ══════════════════════════════════════════════════════════════════════════ */
+.global-premium-music-widget {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9999;
+}
+
+.music-float-btn {
+  background: rgba(30, 8, 8, 0.92);
+  border: 1.8px solid #fbbf24;
+  color: #fbbf24;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), 0 0 15px rgba(251, 191, 36, 0.25);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: visible;
+  padding: 0;
+}
+
+.music-float-btn:hover {
+  transform: scale(1.08);
+  background: #450a0a;
+  box-shadow: 0 10px 30px rgba(217, 119, 6, 0.5);
+}
+
+.music-float-btn .music-icon {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.music-float-btn.is-playing {
+  border-color: #34d399;
+  color: #a7f3d0;
+}
+
+.music-float-btn.is-playing .music-icon-glow {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 2px solid #34d399;
+  animation: rippleRing 2s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rippleRing {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   7. TRADITIONAL TEMPLE FOOTER (MATCHING TEMPLATE DESIGN)
+   ══════════════════════════════════════════════════════════════════════════ */
+.wedding-invitation-footer {
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  padding: 2rem 1rem 4.5rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.footer-inner-container {
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.footer-top-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  width: 100%;
+  max-width: 260px;
+  opacity: 0.65;
+}
+
+.footer-top-ornament .ornament-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.4), transparent);
+}
+
+.footer-top-ornament .ornament-symbol {
+  font-size: 0.95rem;
+  color: #fbbf24;
+}
+
+.footer-credits-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.45rem;
+  background: rgba(30, 8, 8, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(251, 191, 36, 0.28);
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  color: #fed7aa;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45), 0 0 10px rgba(251, 191, 36, 0.08);
+}
+
+.footer-credits-link:hover {
+  background: rgba(45, 10, 10, 0.92);
+  border-color: #fbbf24;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(217, 119, 6, 0.4), 0 0 16px rgba(251, 191, 36, 0.2);
+}
+
+.footer-credits-link .credits-prefix {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  opacity: 0.88;
+}
+
+.footer-credits-link .credits-brand {
+  font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  color: #fbbf24;
+  letter-spacing: 0.06em;
+  text-shadow: 0 0 10px rgba(251, 191, 36, 0.45);
+}
+
+.footer-credits-link:hover .credits-brand {
+  color: #fef08a;
+  text-shadow: 0 0 14px rgba(251, 191, 36, 0.75);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   8. RESPONSIVE DESIGN ADJUSTMENTS
+   ══════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .segments-triad-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .details-segment-card {
+    padding: 1.75rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .divine-blessings-banner {
+    top: 0.65rem;
+    width: calc(100% - 1.5rem);
+    max-width: 440px;
+    padding: 0.45rem 0.95rem;
+    font-size: clamp(0.68rem, 2.8vw, 0.78rem);
+    line-height: 1.45;
+    border-radius: 0.85rem;
+    background: rgba(28, 6, 6, 0.94);
+    border: 1.2px solid rgba(251, 191, 36, 0.45);
+    box-shadow: 0 4px 22px rgba(0, 0, 0, 0.85), 0 0 15px rgba(251, 191, 36, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+  }
+
+  .blessing-text {
+    font-size: clamp(0.68rem, 2.8vw, 0.78rem);
+    line-height: 1.45;
+    text-align: center;
+    color: #fef08a;
+  }
+
+  .lang-switch-container {
+    display: none !important;
+  }
+
+  .gopuram-pillar-img {
+    width: 55px;
+    opacity: 0.18;
+  }
+
+  .hero-section {
+    padding: 1.25rem 0.75rem 1rem;
+    min-height: auto;
+  }
+
+  .divine-murugan-bg.divine-sivan-parvati-bg {
+    width: min(92vw, 400px);
+    top: 9%;
+  }
+
+  .hanging-bell-wrapper {
+    width: 9rem;
+    top: 3.5rem;
+    margin-top: 0;
+  }
+
+  .animated-names-container {
+    margin-top: 13rem;
+    padding: 0 0.75rem;
+  }
+
+  .wedding-names-animated {
+    font-size: clamp(2rem, 7vw, 2.75rem);
+  }
+
+  .animated-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+  }
+
+  .details-section.container {
+    margin-top: 4rem;
+    padding: 0.25rem 0.75rem 3.5rem;
+  }
+
+  .divine-details-card {
+    padding: 2.25rem 1.25rem 2rem;
+  }
+
+  .global-premium-music-widget {
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .music-float-btn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .music-float-btn .music-icon {
+    font-size: 1.2rem;
+  }
+
+  .wedding-invitation-footer {
+    padding: 1.5rem 0.75rem 4.5rem;
+  }
+}
