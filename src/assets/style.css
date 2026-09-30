@@ -77,6 +77,15 @@ html, body {
   font-family: 'Noto Serif Tamil', Georgia, serif;
 }
 
+.wedding-theme-k.lang-tamil .parents-section-title,
+.wedding-theme-k.lang-tamil .parents-name-text {
+  font-family: 'Noto Serif Tamil', Georgia, serif;
+}
+
+.wedding-theme-k.lang-tamil .parents-role-badge {
+  font-family: 'Noto Sans Tamil', 'Outfit', sans-serif;
+}
+
 .wedding-theme-k.lang-tamil .segment-main-val,
 .wedding-theme-k.lang-tamil .segment-venue-title {
   font-family: 'Noto Serif Tamil', Georgia, serif;
@@ -355,6 +364,37 @@ html, body {
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.95), 0 0 15px rgba(251, 191, 36, 0.45);
 }
 
+.wedding-names-animated .heart-symbol-block {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.55rem;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.names-heart-svg {
+  width: 0.75em;
+  height: 0.75em;
+  color: #ef4444;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.95)) 
+          drop-shadow(0 0 10px rgba(239, 68, 68, 0.75))
+          drop-shadow(0 0 20px rgba(244, 63, 94, 0.45));
+  animation: pulseHeart 2.2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes pulseHeart {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 8px rgba(239, 68, 68, 0.7));
+  }
+  50% {
+    transform: scale(1.16);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 16px rgba(239, 68, 68, 0.95)) drop-shadow(0 0 24px rgba(251, 191, 36, 0.5));
+  }
+}
+
 .animated-subtitle {
   font-size: 1.15rem;
   color: #ffedd5;
@@ -577,6 +617,137 @@ html, body {
   font-weight: 900;
 }
 
+
+/* ══════════════════════════════════════════════════════════════════════════
+   4. PARENTS INVITATION SECTION (அன்புடன்)
+   ══════════════════════════════════════════════════════════════════════════ */
+.parents-invitation-section {
+  margin-top: 1.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px dashed rgba(251, 191, 36, 0.35);
+  position: relative;
+  width: 100%;
+}
+
+.parents-title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.parents-ornament-line {
+  flex: 1;
+  max-width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.65), transparent);
+}
+
+.parents-title-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.parents-flourish {
+  color: #fbbf24;
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+
+.parents-section-title {
+  font-family: 'Noto Serif Tamil', 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.4rem, 3.8vw, 1.9rem);
+  font-weight: 700;
+  color: #fbbf24;
+  letter-spacing: 0.06em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 15px rgba(251, 191, 36, 0.4);
+  margin: 0;
+}
+
+.parents-grid-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.parents-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.35rem 1.1rem;
+  background: rgba(38, 9, 9, 0.55);
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(251, 191, 36, 0.05);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.parents-col:hover {
+  transform: translateY(-2px);
+  border-color: rgba(251, 191, 36, 0.5);
+}
+
+.parents-role-badge {
+  font-family: 'Noto Sans Tamil', 'Cinzel', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #f59e0b;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+  padding: 0.2rem 0.75rem;
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  border-radius: 999px;
+}
+
+.parents-name-text {
+  font-family: 'Noto Serif Tamil', 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.15rem, 2.6vw, 1.45rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.95),
+    0 4px 12px rgba(0, 0, 0, 0.85),
+    0 0 10px rgba(251, 191, 36, 0.25);
+}
+
+.parents-name-sub {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.82rem;
+  color: #fed7aa;
+  opacity: 0.85;
+  margin-top: 0.35rem;
+  letter-spacing: 0.04em;
+}
+
+.parents-center-diya {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5rem;
+}
+
+.diya-glow-icon {
+  font-size: 1.6rem;
+  filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.75));
+  animation: pulseDiya 3s ease-in-out infinite alternate;
+}
+
+@keyframes pulseDiya {
+  0% { transform: scale(1); filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.6)); }
+  100% { transform: scale(1.12); filter: drop-shadow(0 0 14px rgba(251, 191, 36, 0.95)); }
+}
 
 /* ══════════════════════════════════════════════════════════════════════════
    5. BOTTOM DECORATIVE QUOTE (GREAT VIBES FONT)
@@ -839,6 +1010,25 @@ html, body {
 
   .divine-details-card {
     padding: 2.25rem 1.25rem 2rem;
+  }
+
+  .parents-invitation-section {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+  }
+
+  .parents-grid-layout {
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .parents-col {
+    width: 100%;
+    padding: 1.1rem 0.85rem;
+  }
+
+  .parents-center-diya {
+    padding: 0.15rem 0;
   }
 
   .global-premium-music-widget {

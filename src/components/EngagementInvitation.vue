@@ -12,7 +12,7 @@ const translations = {
   en: {
     bannerText: 'நமசிவாய எனும் மங்கள நாதத்துடன்… சிவனும் சக்தியும் சாட்சியாக, இரு உள்ளங்கள் இணையும் திருநாள்…',
     groomName: 'KIRUBAKARAN',
-    connector: '&',
+    connector: '❤',
     brideName: 'BHAVYA',
     invitationSubtitle: 'Are Inviting You to Their Sacred Engagement',
     dateFormatted: '25.10.2026',
@@ -33,13 +33,21 @@ const translations = {
     venueVal: 'Tittagudi, Sornam Arumugam Marriage Hall',
     venueSub: 'Cuddalore District, Tamil Nadu',
     openInMapsBtn: 'Open in Maps',
+    // Parents Invitation Section
+    parentsTitle: 'அன்புடன்',
+    groomParentsLabel: 'மணமகன் பெற்றோர்',
+    groomParents: 'நக்கீரன், செல்வராணி',
+    groomParentsSub: 'Nakkeeran, Selvarani',
+    brideParentsLabel: 'மணமகள் பெற்றோர்',
+    brideParents: 'மோகன், அகில பிரியா',
+    brideParentsSub: 'Mohan, Akhila Priya',
     // Bottom Decorative Quote
     bottomQuote: '“Your Presence will make our day more special”'
   },
   tm: {
     bannerText: 'நமசிவாய எனும் மங்கள நாதத்துடன்… சிவனும் சக்தியும் சாட்சியாக, இரு உள்ளங்கள் இணையும் திருநாள்…',
     groomName: 'கிருபாகரன்',
-    connector: '&',
+    connector: '❤',
     brideName: 'பவ்யா',
     invitationSubtitle: 'தங்களை அன்புடன் எங்களது நிச்சயதார்த்த விழாவிற்கு அழைக்கிறோம்',
     dateFormatted: '25.10.2026',
@@ -60,6 +68,14 @@ const translations = {
     venueVal: 'சொர்ணம் ஆறுமுகம் திருமண மண்டபம், திட்டக்குடி',
     venueSub: 'கடலூர் மாவட்டம், தமிழ்நாடு',
     openInMapsBtn: 'வரைபடத்தில் பார்க்க (Maps)',
+    // Parents Invitation Section
+    parentsTitle: 'அன்புடன்',
+    groomParentsLabel: 'மணமகன் பெற்றோர்',
+    groomParents: 'நக்கீரன், செல்வராணி',
+    groomParentsSub: '',
+    brideParentsLabel: 'மணமகள் பெற்றோர்',
+    brideParents: 'மோகன், அகில பிரியா',
+    brideParentsSub: '',
     // Bottom Decorative Quote
     bottomQuote: '“தங்களின் வருகை எங்கள் நன்னாளை மேலும் சிறப்பாக்கும்”'
   }
@@ -364,7 +380,11 @@ onUnmounted(() => {
       <div class="animated-names-container flex flex-col items-center text-center">
         <h1 class="wedding-names-animated">
           <span class="name-block groom-name">{{ t.groomName }}</span>
-          <span class="amp-block">{{ t.connector }}</span>
+          <span class="heart-symbol-block" aria-label="love">
+            <svg class="names-heart-svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </span>
           <span class="name-block bride-name">{{ t.brideName }}</span>
         </h1>
         <p class="animated-subtitle">{{ t.invitationSubtitle }}</p>
@@ -461,7 +481,45 @@ onUnmounted(() => {
         </div>
 
         <!-- ══════════════════════════════════════════════════════════════════
-             4. BOTTOM DECORATIVE QUOTE (GREAT VIBES FONT)
+             4. PARENTS INVITATION SECTION (அன்புடன்)
+             ══════════════════════════════════════════════════════════════════ -->
+        <div class="parents-invitation-section">
+          <!-- Centered Header: அன்புடன் -->
+          <div class="parents-title-wrapper">
+            <div class="parents-ornament-line"></div>
+            <div class="parents-title-inner">
+              <span class="parents-flourish">❦</span>
+              <h3 class="parents-section-title">{{ t.parentsTitle }}</h3>
+              <span class="parents-flourish">❦</span>
+            </div>
+            <div class="parents-ornament-line"></div>
+          </div>
+
+          <!-- Parents 2-Column Layout: Left (Groom Parents) & Right (Bride Parents) -->
+          <div class="parents-grid-layout">
+            <!-- Left: Groom's Parents -->
+            <div class="parents-col parents-col-groom">
+              <span class="parents-role-badge">{{ t.groomParentsLabel }}</span>
+              <div class="parents-name-text">{{ t.groomParents }}</div>
+              <div v-if="t.groomParentsSub" class="parents-name-sub">{{ t.groomParentsSub }}</div>
+            </div>
+
+            <!-- Center Auspicious Diya Divider -->
+            <div class="parents-center-diya">
+              <span class="diya-glow-icon">🪔</span>
+            </div>
+
+            <!-- Right: Bride's Parents -->
+            <div class="parents-col parents-col-bride">
+              <span class="parents-role-badge">{{ t.brideParentsLabel }}</span>
+              <div class="parents-name-text">{{ t.brideParents }}</div>
+              <div v-if="t.brideParentsSub" class="parents-name-sub">{{ t.brideParentsSub }}</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════════════════════
+             5. BOTTOM DECORATIVE QUOTE (GREAT VIBES FONT)
              ══════════════════════════════════════════════════════════════════ -->
         <div class="bottom-presence-quote-container">
           <div class="quote-accent-sprig">❦</div>
