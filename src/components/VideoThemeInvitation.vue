@@ -730,57 +730,53 @@ section.reveal-section.in-view > * {
    1. HERO SECTION
    ══════════════════════════════════════════════════════════════════════════ */
 .hero {
-  position: relative;
   display: grid;
   place-items: center;
   text-align: center;
   color: var(--ink);
   background: url('/images/original-assets/hero-new.jpg') center top / cover no-repeat;
-  padding: 60px 0 40px;
+  padding: 30px 0;
   min-height: 100vh;
 }
 
 .hero-inner {
   position: relative;
   z-index: 2;
-  width: min(840px, 94vw);
-  padding: 30px 16px;
-  /* Card background removed so background image is clearly visible */
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+  width: min(920px, 92vw);
+  padding: 54px 24px;
+  border: 1px solid rgba(178, 132, 48, 0.55);
+  border-radius: 34px;
+  background: rgba(255, 249, 237, 0.82);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 22px 70px rgba(39, 44, 60, 0.20);
 }
 
 .eyebrow {
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(12px, 2.4vw, 15px);
-  letter-spacing: 5px;
+  font-size: 11px;
+  letter-spacing: 4px;
   text-transform: uppercase;
   color: #173a63;
   font-weight: 700;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .hero-copy {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(24px, 4.6vw, 40px);
-  line-height: 1.32;
-  margin: 22px auto 16px;
-  max-width: 720px;
-  color: #4b1830;
+  font-size: clamp(22px, 4vw, 36px);
+  line-height: 1.3;
+  margin: 20px auto 16px;
+  max-width: 740px;
+  color: #234b72;
   font-weight: 600;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.85);
 }
 
 .names {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(48px, 9.5vw, 82px);
+  font-size: clamp(44px, 8.5vw, 76px);
   font-weight: 800;
-  letter-spacing: 1.5px;
-  line-height: 1.08;
+  letter-spacing: 1px;
+  line-height: 1.1;
   margin: 16px 0;
 }
 
@@ -788,47 +784,39 @@ section.reveal-section.in-view > * {
   display: block;
   font-family: 'Playfair Display', serif;
   font-weight: 800;
-  color: #0d2847;
+  color: #123052;
   letter-spacing: 1.5px;
-  text-shadow: 
-    0 1px 0 rgba(255, 255, 255, 0.95),
-    0 2px 8px rgba(255, 255, 255, 0.9),
-    0 4px 18px rgba(13, 40, 71, 0.22);
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
 }
 
 .name-bhavya {
   display: block;
   font-family: 'Playfair Display', serif;
   font-weight: 800;
-  color: #0d2847;
+  color: #123052;
   letter-spacing: 1.5px;
-  text-shadow: 
-    0 1px 0 rgba(255, 255, 255, 0.95),
-    0 2px 8px rgba(255, 255, 255, 0.9),
-    0 4px 18px rgba(13, 40, 71, 0.22);
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
 }
 
 .names .weds {
   display: block;
   font-family: 'Playfair Display', serif;
-  font-size: 0.26em;
+  font-size: 0.28em;
   font-weight: 700;
   letter-spacing: 5px;
-  margin: 12px 0 8px;
-  color: #9a6a18;
+  margin: 10px 0 8px;
+  color: #a36f1c;
   text-transform: uppercase;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
 }
 
 .parents {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(18px, 3.2vw, 24px);
+  font-size: clamp(17px, 2.8vw, 22px);
   font-weight: 600;
   line-height: 1.35;
-  letter-spacing: 0.5px;
-  color: #2b1f1a;
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95);
-  margin: 6px auto 14px;
+  letter-spacing: 0.3px;
+  color: #3f5365;
+  margin: 8px auto 14px;
 }
 
 .parents span {
@@ -837,22 +825,20 @@ section.reveal-section.in-view > * {
 
 .hero-date {
   font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: 4px;
-  color: #7d4d12;
-  margin-top: 24px;
+  color: #8f6421;
+  margin-top: 22px;
   font-weight: 700;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
 }
 
 .discover {
-  margin-top: 40px;
+  margin-top: 36px;
   font-size: 11px;
-  letter-spacing: 2.5px;
-  font-weight: 700;
-  color: #173a63;
-  opacity: 0.92;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #315676;
+  opacity: 0.9;
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -1343,12 +1329,14 @@ section.reveal-section.in-view > * {
    ══════════════════════════════════════════════════════════════════════════ */
 @media (max-width: 700px) {
   .hero-inner {
-    width: 100%;
-    padding: 24px 10px;
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
+    width: calc(100vw - 24px);
+    padding: 42px 14px;
+    border-radius: 26px;
+    background: rgba(255, 249, 237, 0.84);
+    border: 1px solid rgba(178, 132, 48, 0.55);
+    box-shadow: 0 16px 50px rgba(39, 44, 60, 0.18);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
   }
 
   .eyebrow {
