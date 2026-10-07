@@ -1,5 +1,164 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
+
+// ══════════════════════════════════════════════════════════════════════════
+// 0. MULTILINGUAL TRANSLATIONS (ENGLISH & TAMIL)
+// Default: English. If URL contains /lang-tm or ?lang=tm, switches to Tamil.
+// ══════════════════════════════════════════════════════════════════════════
+const currentLang = ref('en')
+
+const translations = {
+  en: {
+    // Entrance Doors
+    entryKickerTop: 'With all our hearts',
+    entryTitle: 'You are invited',
+    entryKickerSub: 'to celebrate with us',
+    openInvitationBtn: 'OPEN INVITATION',
+    entryHint: 'Tap to open the doors',
+
+    // Hero Section
+    togetherWithFamilies: 'Together with our families',
+    heroInviteCopy: 'We cordially invite you to celebrate the auspicious engagement of',
+    groomName: 'Kirubakaran',
+    groomParents: 'S/o Mr. K.M. Mohan & Mrs. M. Akila Priya',
+    weds: 'weds',
+    brideName: 'Bhavya',
+    brideParents: 'D/o Mr. R. Nakkeeran & Mrs. N. Selvarani',
+    heroDate: '25 • OCTOBER • 2026',
+    scrollPrompt: '↓ SCROLL TO DISCOVER OUR STORY ↓',
+
+    // Scratch Card Date Section
+    dateSectionTitle: 'Our Special Date',
+    scratchPromptSub: 'Scratch to reveal the date',
+    scratchDay: 'SUNDAY',
+    scratchDate: '25-10-2026',
+    scratchCanvasLabel: 'Scratch to reveal Sunday, 25-10-2026',
+    scratchCanvasFoil: '✦ Scratch here ✦',
+    scratchTip: '✦ Gently reveal our special date ✦',
+
+    // Engagement Event Section
+    timelineTitle: 'Engagement Ceremony',
+    timelineSub: 'A sacred beginning · Two souls united in love',
+    eventTitle: 'Engagement Ceremony',
+    eventDayDate: 'Sunday • 25th October 2026',
+    eventTime: '10:30 AM – 12:00 PM • Auspicious Muhurtham',
+    venueName: 'Sornam Arumugam Marriage Hall',
+    venueAddress: 'Tittagudi, Cuddalore District, Tamil Nadu – 606106, India',
+    viewLocationBtn: '📍 View on Google Maps',
+    addToCalendarBtn: '📅 Add to Google Calendar',
+
+    // Countdown Section
+    countEyebrow: 'Big day is getting closer',
+    countTitle: 'Counting Down to Forever',
+    countSub: 'Every second brings us closer to celebrating with you.',
+    daysLabel: 'Days',
+    hoursLabel: 'Hours',
+    minsLabel: 'Minutes',
+    secsLabel: 'Seconds',
+    countFooterDate: '25 OCTOBER 2026 · 10:30 AM',
+
+    // Guest Note Section
+    guestKicker: 'A little note for you',
+    guestTitle: 'Dear Guest',
+    guestSub: 'From our hearts to yours',
+    guestMessage: 'We found our moment, and now we’re making it a lifetime. Come share the laughter, the love, and the beginning of our forever. As we step into this beautiful new chapter together, your presence, love, and blessings would make our special day even more meaningful and fill our hearts with joy.',
+    signatureWithLove: 'With love,',
+    signatureNames: 'Kirubakaran & Bhavya',
+
+    // Footer
+    madeWithLove: 'Made with love by',
+    toggleMusicPlay: 'Play background music',
+    toggleMusicMute: 'Mute background music'
+  },
+  tm: {
+    // Entrance Doors
+    entryKickerTop: 'இரு உள்ளங்கள் இணையும் திருநாள்',
+    entryTitle: 'அன்புடன் அழைக்கிறோம்',
+    entryKickerSub: 'எங்கள் நிச்சயதார்த்த விழாவிற்கு',
+    openInvitationBtn: 'அழைப்பிதழை திறக்கவும்',
+    entryHint: 'கதவைத் தட்டி திறக்கவும்',
+
+    // Hero Section
+    togetherWithFamilies: 'எங்கள் குடும்பத்தாருடன் இணைந்து',
+    heroInviteCopy: 'அன்புடன் எங்களது சுப நிச்சயதார்த்த விழாவிற்கு தங்களை அழைக்கிறோம்',
+    groomName: 'கிருபாகரன்',
+    groomParents: 'மகன்: திரு. K.M. மோகன் & திருமதி. M. அகில பிரியா',
+    weds: 'இணையும்',
+    brideName: 'பவ்யா',
+    brideParents: 'மகள்: திரு. R. நக்கீரன் & திருமதி. N. செல்வராணி',
+    heroDate: '25 • அக்டோபர் • 2026',
+    scrollPrompt: '↓ எங்களின் கதையைக் காண கீழே செல்லவும் ↓',
+
+    // Scratch Card Date Section
+    dateSectionTitle: 'எங்களின் நன்னாள்',
+    scratchPromptSub: 'தேதியைக் காண உரசவும்',
+    scratchDay: 'ஞாயிற்றுக்கிழமை',
+    scratchDate: '25-10-2026',
+    scratchCanvasLabel: 'தேதியை பார்க்க உரசவும் 25-10-2026',
+    scratchCanvasFoil: '✦ இங்கே உரசவும் ✦',
+    scratchTip: '✦ எங்களின் நன்னாளைக் காண உரசவும் ✦',
+
+    // Engagement Event Section
+    timelineTitle: 'சுப நிச்சயதார்த்த விழா',
+    timelineSub: 'புனிதமான தொடக்கம் · இரு உள்ளங்களின் சங்கமம்',
+    eventTitle: 'சுப நிச்சயதார்த்த விழா',
+    eventDayDate: 'ஞாயிற்றுக்கிழமை • 25 அக்டோபர் 2026',
+    eventTime: 'காலை 10:30 – நண்பகல் 12:00 • சுப முகூர்த்தம்',
+    venueName: 'சொர்ணம் ஆறுமுகம் திருமண மண்டபம்',
+    venueAddress: 'திட்டக்குடி, கடலூர் மாவட்டம், தமிழ்நாடு – 606106',
+    viewLocationBtn: '📍 வரைபடத்தில் பார்க்க (Maps)',
+    addToCalendarBtn: '📅 காலண்டரில் சேர்க்க (Calendar)',
+
+    // Countdown Section
+    countEyebrow: 'மங்கள நன்னாள் நெருங்குகிறது',
+    countTitle: 'நன்னாளை நோக்கிய தருணங்கள்',
+    countSub: 'ஒவ்வொரு நொடியும் உங்களுடன் கொண்டாடும் தருணத்தை நோக்கி நகர்கிறது.',
+    daysLabel: 'நாட்கள்',
+    hoursLabel: 'மணி',
+    minsLabel: 'நிமிடம்',
+    secsLabel: 'நொடிகள்',
+    countFooterDate: '25 அக்டோபர் 2026 · காலை 10:30',
+
+    // Guest Note Section
+    guestKicker: 'எங்கள் இதயத்திலிருந்து ஒரு மடல்',
+    guestTitle: 'அன்பான விருந்தினரே',
+    guestSub: 'எங்கள் இதயத்தின் வாழ்த்துக்கள்',
+    guestMessage: 'இறைவன் அருளால் இரு குடும்பங்களின் சம்மதத்துடன் எங்கள் வாழ்வின் வசந்த காலத்தை துவங்குகிறோம். அன்பும் மகிழ்ச்சியும் நிறைந்த இந்த நன்னாளில் தங்களின் வருகையும் வாழ்த்துக்களும் எங்கள் புதிய வாழ்விற்கு உன்னத ஆசீர்வாதமாக அமையும் என அன்புடன் வேண்டுகிறோம்.',
+    signatureWithLove: 'அன்புடன்,',
+    signatureNames: 'கிருபாகரன் & பவ்யா',
+
+    // Footer
+    madeWithLove: 'அன்புடன் உருவாக்கியது',
+    toggleMusicPlay: 'இசையை இயக்கவும்',
+    toggleMusicMute: 'இசையை நிறுத்தவும்'
+  }
+}
+
+// Active translation accessor
+const t = computed(() => translations[currentLang.value] || translations.en)
+
+// Synchronize Language from URL (/lang-tm or /lang-en)
+// Defaults to English on initial page load unless /lang-tm is specified
+const syncLangFromUrl = () => {
+  if (typeof window === 'undefined') return
+  const path = window.location.pathname.toLowerCase()
+  const search = window.location.search.toLowerCase()
+  const hash = window.location.hash.toLowerCase()
+  if (path.includes('lang-tm') || search.includes('lang=tm') || hash.includes('lang-tm')) {
+    currentLang.value = 'tm'
+  } else {
+    currentLang.value = 'en'
+  }
+}
+
+// Language Switcher Function
+const setLanguage = (lang) => {
+  currentLang.value = lang
+  const targetPath = lang === 'tm' ? '/lang-tm' : '/lang-en'
+  if (window.location.pathname !== targetPath) {
+    window.history.pushState({ lang }, '', targetPath)
+  }
+}
 
 // ══════════════════════════════════════════════════════════════════════════
 // 1. STATE & AUDIO CONTROLS
@@ -149,7 +308,7 @@ const initScratchCanvas = () => {
   scratchCtx.fillStyle = 'rgba(255, 246, 205, 0.55)'
   scratchCtx.font = '600 17px serif'
   scratchCtx.textAlign = 'center'
-  scratchCtx.fillText('✦ Scratch here ✦', r.width / 2, r.height / 2 + 6)
+  scratchCtx.fillText(t.value.scratchCanvasFoil, r.width / 2, r.height / 2 + 6)
 }
 
 const onPointerDown = (e) => {
@@ -206,18 +365,34 @@ const onPointerUp = () => {
 // ══════════════════════════════════════════════════════════════════════════
 const googleMapsLocationUrl = 'https://maps.app.goo.gl/8r8R7PVDQ1oatWbVA'
 
-const googleCalendarUrl = 'https://calendar.google.com/calendar/render?action=TEMPLATE' +
-  '&text=' + encodeURIComponent('Engagement Ceremony – M. Kirubakaran & N. Bhavya') +
-  '&dates=20261025T050000Z%2F20261025T063000Z' +
-  '&details=' + encodeURIComponent('Auspicious Engagement Ceremony of M. Kirubakaran and N. Bhavya. Together with our families, we cordially invite you to celebrate with us.') +
-  '&location=' + encodeURIComponent('Sornam Arumugam Marriage Hall, Tittagudi, Cuddalore District, Tamil Nadu – 606106')
+const googleCalendarUrl = computed(() => {
+  const isTm = currentLang.value === 'tm'
+  const text = isTm 
+    ? 'சுப நிச்சயதார்த்த விழா – கிருபாகரன் & பவ்யா'
+    : 'Engagement Ceremony – M. Kirubakaran & N. Bhavya'
+  const details = isTm
+    ? 'M. கிருபாகரன் மற்றும் N. பவ்யா ஆகியோரின் சுப நிச்சயதார்த்த விழாவிற்கு எங்கள் குடும்பத்தாருடன் இணைந்து தங்களை அன்போடு அழைக்கிறோம்.'
+    : 'Auspicious Engagement Ceremony of M. Kirubakaran and N. Bhavya. Together with our families, we cordially invite you to celebrate with us.'
+  const location = 'Sornam Arumugam Marriage Hall, Tittagudi, Cuddalore District, Tamil Nadu – 606106'
+
+  return 'https://calendar.google.com/calendar/render?action=TEMPLATE' +
+    '&text=' + encodeURIComponent(text) +
+    '&dates=20261025T050000Z%2F20261025T063000Z' +
+    '&details=' + encodeURIComponent(details) +
+    '&location=' + encodeURIComponent(location)
+})
 
 // ══════════════════════════════════════════════════════════════════════════
-// 5. SCROLL REVEAL OBSERVER
+// 5. SCROLL REVEAL OBSERVER & LIFECYCLE
 // ══════════════════════════════════════════════════════════════════════════
 let revealObserver = null
 
 onMounted(() => {
+  syncLangFromUrl()
+  if (typeof window !== 'undefined') {
+    window.addEventListener('popstate', syncLangFromUrl)
+  }
+
   updateCountdown()
   countdownInterval = setInterval(updateCountdown, 1000)
 
@@ -243,6 +418,9 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
+  if (typeof window !== 'undefined') {
+    window.removeEventListener('popstate', syncLangFromUrl)
+  }
   if (countdownInterval) clearInterval(countdownInterval)
   window.removeEventListener('resize', initScratchCanvas)
   if (revealObserver) revealObserver.disconnect()
@@ -251,7 +429,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="original-template-root">
+  <div class="original-template-root" :class="{ 'lang-tamil': currentLang === 'tm' }">
 
     <!-- ══════════════════════════════════════════════════════════════════════
          BACKGROUND AUDIO PLAYER & FLOATING MUSIC TOGGLE BUTTON
@@ -270,7 +448,7 @@ onUnmounted(() => {
       id="musicBtn" 
       type="button" 
       @click="toggleMusic"
-      :aria-label="isPlayingMusic ? 'Mute background music' : 'Play background music'"
+      :aria-label="isPlayingMusic ? t.toggleMusicMute : t.toggleMusicPlay"
     >
       {{ isPlayingMusic ? '♫' : '♪' }}
     </button>
@@ -286,15 +464,15 @@ onUnmounted(() => {
       </div>
 
       <div class="entry-content">
-        <p class="entry-kicker">With all our hearts</p>
-        <h1 class="entry-title">You are<br>invited</h1>
-        <p class="entry-kicker entry-kicker-sub">to celebrate with us</p>
+        <p class="entry-kicker">{{ t.entryKickerTop }}</p>
+        <h1 class="entry-title">{{ t.entryTitle }}</h1>
+        <p class="entry-kicker entry-kicker-sub">{{ t.entryKickerSub }}</p>
 
         <button class="open-btn" id="openBtn" type="button" @click="openInvitation">
-          OPEN INVITATION
+          {{ t.openInvitationBtn }}
         </button>
 
-        <p class="entry-hint">Tap to open the doors</p>
+        <p class="entry-hint">{{ t.entryHint }}</p>
       </div>
     </div>
 
@@ -304,45 +482,45 @@ onUnmounted(() => {
     <main id="main" :class="{ visible: isMainVisible }">
 
       <!-- 1. HERO SECTION -->
-      <section class="hero" aria-label="Engagement invitation">
+      <section class="hero" :aria-label="t.timelineTitle">
         <div class="hero-inner">
-          <div class="eyebrow">Together with our families</div>
-          <p class="hero-copy">We cordially invite you to celebrate the auspicious engagement of</p>
+          <div class="eyebrow">{{ t.togetherWithFamilies }}</div>
+          <p class="hero-copy">{{ t.heroInviteCopy }}</p>
 
           <div class="names">
-            <span class="name-kiruba">Kirubakaran</span>
+            <span class="name-kiruba">{{ t.groomName }}</span>
             <div class="parents">
-              <span>S/o Mr. K.M. Mohan &amp; Mrs. M. Akila Priya</span>
+              <span>{{ t.groomParents }}</span>
             </div>
-            <span class="weds">weds</span>
-            <span class="name-bhavya">Bhavya</span>
+            <span class="weds">{{ t.weds }}</span>
+            <span class="name-bhavya">{{ t.brideName }}</span>
             <div class="parents">
-              <span>D/o Mr. R. Nakkeeran &amp; Mrs. N. Selvarani</span>
+              <span>{{ t.brideParents }}</span>
             </div>
           </div>
 
-          <div class="hero-date">25 • OCTOBER • 2026</div>
-          <div class="discover">↓ SCROLL TO DISCOVER OUR STORY ↓</div>
+          <div class="hero-date">{{ t.heroDate }}</div>
+          <div class="discover">{{ t.scrollPrompt }}</div>
         </div>
       </section>
 
       <!-- 2. DATE & SCRATCH CARD SECTION -->
       <section class="reveal-section date-section" id="date">
         <div class="date-inner">
-          <h2 class="section-title">Our Special Date</h2>
-          <div class="sub">Scratch to reveal the date</div>
+          <h2 class="section-title">{{ t.dateSectionTitle }}</h2>
+          <div class="sub">{{ t.scratchPromptSub }}</div>
 
           <div class="scratch-box-wrap">
             <div class="scratch-box" :class="{ revealed: isCardRevealed }">
               <div class="scratch-reveal-text">
-                <div class="scratch-day">SUNDAY</div>
-                <div class="scratch-date">25-10-2026</div>
+                <div class="scratch-day">{{ t.scratchDay }}</div>
+                <div class="scratch-date">{{ t.scratchDate }}</div>
               </div>
 
               <canvas 
                 ref="scratchCanvasRef" 
                 class="scratch-canvas" 
-                aria-label="Scratch to reveal Sunday, 25-10-2026"
+                :aria-label="t.scratchCanvasLabel"
                 @pointerdown="onPointerDown"
                 @pointermove="wipe"
                 @pointerup="onPointerUp"
@@ -353,7 +531,7 @@ onUnmounted(() => {
           </div>
 
           <div class="scratch-tip" @click="revealScratch">
-            ✦ Gently reveal our special date ✦
+            {{ t.scratchTip }}
           </div>
         </div>
       </section>
@@ -361,8 +539,8 @@ onUnmounted(() => {
       <!-- 3. ENGAGEMENT TIMELINE & EVENT SECTION -->
       <section class="reveal-section timeline" id="timeline">
         <div class="timeline-inner">
-          <h2 class="section-title timeline-title">Engagement Ceremony</h2>
-          <div class="sub">A sacred beginning · Two souls united in love</div>
+          <h2 class="section-title timeline-title">{{ t.timelineTitle }}</h2>
+          <div class="sub">{{ t.timelineSub }}</div>
 
           <div class="timeline-journey">
 
@@ -372,14 +550,14 @@ onUnmounted(() => {
                 <img src="/images/original-assets/timeline-reception.jpg" alt="Engagement ceremony celebration" />
               </div>
               <div class="timeline-card">
-                <h3>Engagement Ceremony</h3>
+                <h3>{{ t.eventTitle }}</h3>
                 <div class="timeline-meta">
-                  <span>Sunday • 25th October 2026</span>
+                  <span>{{ t.eventDayDate }}</span>
                 </div>
-                <div class="timeline-time">10:30 AM – 12:00 PM • Auspicious Muhurtham</div>
+                <div class="timeline-time">{{ t.eventTime }}</div>
                 <div class="timeline-location">
-                  <strong>Sornam Arumugam Marriage Hall</strong><br>
-                  Tittagudi, Cuddalore District, Tamil Nadu – 606106, India
+                  <strong>{{ t.venueName }}</strong><br>
+                  {{ t.venueAddress }}
                 </div>
                 <div class="timeline-actions">
                   <a 
@@ -388,7 +566,7 @@ onUnmounted(() => {
                     rel="noopener" 
                     :href="googleMapsLocationUrl"
                   >
-                    📍 View on Google Maps
+                    {{ t.viewLocationBtn }}
                   </a>
                   <a 
                     class="timeline-btn" 
@@ -396,7 +574,7 @@ onUnmounted(() => {
                     rel="noopener" 
                     :href="googleCalendarUrl"
                   >
-                    📅 Add to Google Calendar
+                    {{ t.addToCalendarBtn }}
                   </a>
                 </div>
               </div>
@@ -409,54 +587,77 @@ onUnmounted(() => {
       <!-- 4. COUNTDOWN SECTION -->
       <section class="reveal-section countdown" id="countdown">
         <div class="count-panel">
-          <div class="eyebrow" style="color:#f4d99a;margin-bottom:12px">Big day is getting closer</div>
-          <h2 class="section-title count-title">Counting Down to Forever</h2>
-          <div class="sub count-sub">Every second brings us closer to celebrating with you.</div>
+          <div class="eyebrow" style="color:#f4d99a;margin-bottom:12px">{{ t.countEyebrow }}</div>
+          <h2 class="section-title count-title">{{ t.countTitle }}</h2>
+          <div class="sub count-sub">{{ t.countSub }}</div>
 
           <div class="count-grid" role="timer" aria-live="polite">
             <div class="count-card">
               <div class="count-num" id="days">{{ countdown.days }}</div>
-              <div class="count-label">Days</div>
+              <div class="count-label">{{ t.daysLabel }}</div>
             </div>
             <div class="count-card">
               <div class="count-num" id="hours">{{ countdown.hours }}</div>
-              <div class="count-label">Hours</div>
+              <div class="count-label">{{ t.hoursLabel }}</div>
             </div>
             <div class="count-card">
               <div class="count-num" id="mins">{{ countdown.mins }}</div>
-              <div class="count-label">Minutes</div>
+              <div class="count-label">{{ t.minsLabel }}</div>
             </div>
             <div class="count-card">
               <div class="count-num" id="secs">{{ countdown.secs }}</div>
-              <div class="count-label">Seconds</div>
+              <div class="count-label">{{ t.secsLabel }}</div>
             </div>
           </div>
 
-          <div class="count-date">25 OCTOBER 2026 · 10:30 AM</div>
+          <div class="count-date">{{ t.countFooterDate }}</div>
         </div>
       </section>
 
       <!-- 5. GUEST NOTE SECTION -->
       <section class="reveal-section guest" id="guest">
         <div class="guest-card">
-          <div class="guest-kicker">A little note for you</div>
-          <h2 class="section-title guest-title">Dear Guest</h2>
-          <div class="sub guest-sub">From our hearts to yours</div>
+          <div class="guest-kicker">{{ t.guestKicker }}</div>
+          <h2 class="section-title guest-title">{{ t.guestTitle }}</h2>
+          <div class="sub guest-sub">{{ t.guestSub }}</div>
 
           <div class="guest-message">
-            We found our moment, and now we’re making it a lifetime. Come share the laughter, the love, and the beginning of our forever. As we step into this beautiful new chapter together, your presence, love, and blessings would make our special day even more meaningful and fill our hearts with joy.
+            {{ t.guestMessage }}
           </div>
 
           <div class="signature">
-            <div class="signature-tag">With love,</div>
-            <div class="signature-names">Kirubakaran &amp; Bhavya</div>
+            <div class="signature-tag">{{ t.signatureWithLove }}</div>
+            <div class="signature-names">{{ t.signatureNames }}</div>
           </div>
         </div>
       </section>
 
       <!-- 6. FOOTER -->
       <footer class="reveal-section footer">
-        <div class="footer-love">Made with love by</div>
+        <!-- Language Switcher Buttons (Bottom of the page: English / தமிழ்) -->
+        <div class="footer-lang-switcher" aria-label="Language selection">
+          <button 
+            type="button"
+            class="lang-switch-btn"
+            :class="{ active: currentLang === 'en' }"
+            @click="setLanguage('en')"
+            title="View in English"
+          >
+            English
+          </button>
+          <span class="lang-switch-sep">•</span>
+          <button 
+            type="button"
+            class="lang-switch-btn"
+            :class="{ active: currentLang === 'tm' }"
+            @click="setLanguage('tm')"
+            title="தமிழில் பார்க்க"
+          >
+            தமிழ்
+          </button>
+        </div>
+
+        <div class="footer-love">{{ t.madeWithLove }}</div>
         <a 
           class="instagram-btn" 
           href="https://invitesend.com" 
@@ -1243,6 +1444,51 @@ section.reveal-section.in-view > * {
   border-top: 1px solid rgba(218, 172, 84, 0.35);
 }
 
+/* Footer Language Switcher Pill */
+.footer-lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(18, 38, 62, 0.82);
+  border: 1px solid rgba(226, 190, 111, 0.55);
+  border-radius: 999px;
+  padding: 5px 12px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.lang-switch-btn {
+  background: transparent;
+  border: none;
+  color: #f4d59e;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: 0.5px;
+}
+
+.lang-switch-btn:hover {
+  color: #ffffff;
+}
+
+.lang-switch-btn.active {
+  background: linear-gradient(135deg, #fff2cc, #f3d489);
+  color: #173a63;
+  font-weight: 800;
+  box-shadow: 0 2px 10px rgba(243, 212, 137, 0.45);
+}
+
+.lang-switch-sep {
+  color: rgba(226, 190, 111, 0.45);
+  font-size: 11px;
+}
+
 .footer-love {
   font-family: 'Cormorant Garamond', serif;
   font-size: 14px;
@@ -1434,5 +1680,40 @@ section.reveal-section.in-view > * {
   .signature-names {
     font-size: 40px;
   }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   TAMIL LANGUAGE TYPOGRAPHY OVERRIDES
+   ══════════════════════════════════════════════════════════════════════════ */
+.original-template-root.lang-tamil {
+  font-family: 'Noto Sans Tamil', 'Montserrat', system-ui, sans-serif;
+}
+
+.original-template-root.lang-tamil .entry-title,
+.original-template-root.lang-tamil .hero-copy,
+.original-template-root.lang-tamil .section-title,
+.original-template-root.lang-tamil .timeline-card h3,
+.original-template-root.lang-tamil .guest-message {
+  font-family: 'Noto Serif Tamil', 'Playfair Display', serif;
+}
+
+.original-template-root.lang-tamil .names .name-kiruba,
+.original-template-root.lang-tamil .names .name-bhavya {
+  font-family: 'Noto Serif Tamil', 'Playfair Display', serif;
+  font-size: clamp(52px, 10vw, 84px);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.original-template-root.lang-tamil .names .weds {
+  font-family: 'Noto Serif Tamil', serif;
+  font-size: 0.28em;
+  letter-spacing: 2px;
+}
+
+.original-template-root.lang-tamil .signature-names {
+  font-family: 'Noto Serif Tamil', serif;
+  font-size: clamp(34px, 6vw, 48px);
+  font-weight: 700;
 }
 </style>
