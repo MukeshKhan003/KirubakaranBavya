@@ -312,12 +312,12 @@ onUnmounted(() => {
           <div class="names">
             <span class="name-kiruba">Kirubakaran</span>
             <div class="parents">
-              <span>S/o Mr. R. Nakkeeran &amp; Mrs. N. Selvarani</span>
+              <span>S/o Mr. K.M. Mohan &amp; Mrs. M. Akila Priya</span>
             </div>
             <span class="weds">weds</span>
             <span class="name-bhavya">Bhavya</span>
             <div class="parents">
-              <span>D/o Mr. K.M. Mohan &amp; Mrs. M. Akila Priya</span>
+              <span>D/o Mr. R. Nakkeeran &amp; Mrs. N. Selvarani</span>
             </div>
           </div>
 

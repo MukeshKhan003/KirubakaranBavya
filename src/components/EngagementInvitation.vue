@@ -36,9 +36,9 @@ const translations = {
     // Parents Invitation Section
     parentsTitle: 'With Love',
     groomParentsLabel: "Groom's Parents",
-    groomParents: 'R. Nakeeran, N. Selvarani',
+    groomParents: 'K.M. Mohan, M. Akila Priya',
     brideParentsLabel: "Bride's Parents",
-    brideParents: 'K.M. Mohan, M. Akila Priya',
+    brideParents: 'R. Nakeeran, N. Selvarani',
     // Bottom Decorative Quote
     bottomQuote: '“Your Presence will make our day more special”'
   },
@@ -69,9 +69,9 @@ const translations = {
     // Parents Invitation Section
     parentsTitle: 'அன்புடன்',
     groomParentsLabel: 'மணமகன் பெற்றோர்',
-    groomParents: 'R. நக்கீரன், N. செல்வராணி',
+    groomParents: 'K.M. மோகன், M. அகில பிரியா',
     brideParentsLabel: 'மணமகள் பெற்றோர்',
-    brideParents: 'K.M. மோகன், M. அகில பிரியா',
+    brideParents: 'R. நக்கீரன், N. செல்வராணி',
     // Bottom Decorative Quote
     bottomQuote: '“தங்களின் வருகை எங்கள் நன்னாளை மேலும் சிறப்பாக்கும்”'
   }
