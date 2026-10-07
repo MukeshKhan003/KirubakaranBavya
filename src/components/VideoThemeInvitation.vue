@@ -776,14 +776,36 @@ section.reveal-section.in-view > * {
 }
 
 .names {
-  font-family: 'Allura', cursive;
-  font-size: clamp(84px, 16vw, 140px);
-  font-weight: 400;
-  letter-spacing: 1px;
-  line-height: 0.88;
-  color: #8c2035;
-  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.9), 0 4px 18px rgba(140, 32, 53, 0.15);
-  margin: 14px 0;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(48px, 9.5vw, 82px);
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  line-height: 1.08;
+  margin: 16px 0;
+}
+
+.name-kiruba {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  color: #0d2847;
+  letter-spacing: 1.5px;
+  text-shadow: 
+    0 1px 0 rgba(255, 255, 255, 0.95),
+    0 2px 8px rgba(255, 255, 255, 0.9),
+    0 4px 18px rgba(13, 40, 71, 0.22);
+}
+
+.name-bhavya {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  color: #0d2847;
+  letter-spacing: 1.5px;
+  text-shadow: 
+    0 1px 0 rgba(255, 255, 255, 0.95),
+    0 2px 8px rgba(255, 255, 255, 0.9),
+    0 4px 18px rgba(13, 40, 71, 0.22);
 }
 
 .names .weds {
@@ -1340,12 +1362,12 @@ section.reveal-section.in-view > * {
   }
 
   .names {
-    font-size: clamp(74px, 20vw, 110px);
-    line-height: 0.88;
+    font-size: clamp(42px, 11vw, 64px);
+    line-height: 1.1;
   }
 
   .names .weds {
-    font-size: 0.26em;
+    font-size: 0.28em;
     letter-spacing: 4px;
     margin: 8px 0 6px;
   }

@@ -349,18 +349,41 @@ html, body {
 .wedding-names-animated .name-block {
   display: inline-block;
   color: #ffffff;
+  font-weight: 900;
   text-shadow: 
     0 2px 4px rgba(0, 0, 0, 0.95),
-    0 4px 18px rgba(0, 0, 0, 0.9),
-    0 0 25px rgba(0, 0, 0, 0.85),
-    0 0 10px rgba(251, 191, 36, 0.35);
+    0 4px 18px rgba(0, 0, 0, 0.95),
+    0 0 25px rgba(0, 0, 0, 0.9),
+    0 0 12px rgba(251, 191, 36, 0.5);
+}
+
+.wedding-names-animated .groom-name {
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  color: #fffbeb;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.98),
+    0 4px 18px rgba(0, 0, 0, 0.95),
+    0 0 28px rgba(0, 0, 0, 0.9),
+    0 0 14px rgba(251, 191, 36, 0.55);
+}
+
+.wedding-names-animated .bride-name {
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  color: #fffbeb;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.98),
+    0 4px 18px rgba(0, 0, 0, 0.95),
+    0 0 28px rgba(0, 0, 0, 0.9),
+    0 0 14px rgba(251, 191, 36, 0.55);
 }
 
 .wedding-names-animated .amp-block {
   display: inline-block;
   margin: 0 0.6rem;
   color: #fbbf24;
-  font-weight: 600;
+  font-weight: 700;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.95), 0 0 15px rgba(251, 191, 36, 0.45);
 }
 
