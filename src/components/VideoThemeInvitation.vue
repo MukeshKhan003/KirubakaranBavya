@@ -212,35 +212,6 @@ const googleCalendarUrl = 'https://calendar.google.com/calendar/render?action=TE
   '&details=' + encodeURIComponent('Auspicious Engagement Ceremony of M. Kirubakaran and N. Bhavya. Together with our families, we cordially invite you to celebrate with us.') +
   '&location=' + encodeURIComponent('Sornam Arumugam Marriage Hall, Tittagudi, Cuddalore District, Tamil Nadu – 606106')
 
-const downloadIcsCalendar = () => {
-  const icsData = [
-    'BEGIN:VCALENDAR',
-    'VERSION:2.0',
-    'PRODID:-//Kirubakaran and Bhavya//Engagement Ceremony//EN',
-    'CALSCALE:GREGORIAN',
-    'METHOD:PUBLISH',
-    'BEGIN:VEVENT',
-    'UID:engagement-kirubakaran-bhavya-20261025@invitesend.com',
-    'DTSTAMP:20261007T120000Z',
-    'DTSTART:20261025T050000Z',
-    'DTEND:20261025T063000Z',
-    'SUMMARY:Engagement Ceremony – M. Kirubakaran & N. Bhavya',
-    'DESCRIPTION:Auspicious Engagement Ceremony of M. Kirubakaran and N. Bhavya. Together with our families\\, we cordially invite you to celebrate with us.',
-    'LOCATION:Sornam Arumugam Marriage Hall\\, Tittagudi\\, Cuddalore District\\, Tamil Nadu – 606106',
-    'STATUS:CONFIRMED',
-    'END:VEVENT',
-    'END:VCALENDAR'
-  ].join('\r\n')
-
-  const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' })
-  const link = document.createElement('a')
-  link.href = window.URL.createObjectURL(blob)
-  link.setAttribute('download', 'engagement-kirubakaran-bhavya.ics')
-  document.body.appendChild(link)
-  link.click()
-  document.body.removeChild(link)
-}
-
 // ══════════════════════════════════════════════════════════════════════════
 // 5. SCROLL REVEAL OBSERVER
 // ══════════════════════════════════════════════════════════════════════════
@@ -425,15 +396,8 @@ onUnmounted(() => {
                     rel="noopener" 
                     :href="googleCalendarUrl"
                   >
-                    📅 Google Calendar
+                    📅 Add to Google Calendar
                   </a>
-                  <button 
-                    type="button" 
-                    class="timeline-btn ics-btn" 
-                    @click="downloadIcsCalendar"
-                  >
-                    🗓 Add to Calendar (Apple / Outlook)
-                  </button>
                 </div>
               </div>
             </article>
@@ -580,7 +544,8 @@ section.reveal-section.in-view > * {
 #entry.open {
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.6s ease 1.5s;
+  visibility: hidden;
+  transition: opacity 0.6s ease 1.5s, visibility 0s linear 2.1s;
 }
 
 .door-stage {
