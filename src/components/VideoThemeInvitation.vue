@@ -1684,36 +1684,276 @@ section.reveal-section.in-view > * {
 
 /* ══════════════════════════════════════════════════════════════════════════
    TAMIL LANGUAGE TYPOGRAPHY OVERRIDES
+   Reduces font sizes & font weights across all sections so Tamil text renders
+   proportionately and cleanly without looking oversized or overly heavy.
    ══════════════════════════════════════════════════════════════════════════ */
 .original-template-root.lang-tamil {
   font-family: 'Noto Sans Tamil', 'Montserrat', system-ui, sans-serif;
 }
 
-.original-template-root.lang-tamil .entry-title,
-.original-template-root.lang-tamil .hero-copy,
-.original-template-root.lang-tamil .section-title,
-.original-template-root.lang-tamil .timeline-card h3,
-.original-template-root.lang-tamil .guest-message {
-  font-family: 'Noto Serif Tamil', 'Playfair Display', serif;
+/* Door Entrance Section */
+.original-template-root.lang-tamil .entry-kicker {
+  font-family: 'Noto Serif Tamil', serif;
+  font-size: clamp(16px, 3.2vw, 22px);
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.original-template-root.lang-tamil .entry-kicker-sub {
+  font-size: clamp(15px, 2.8vw, 20px);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.original-template-root.lang-tamil .entry-title {
+  font-family: 'Noto Serif Tamil', serif;
+  font-size: clamp(34px, 6.5vw, 54px);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.5px;
+}
+
+.original-template-root.lang-tamil .open-btn {
+  font-family: 'Noto Sans Tamil', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 13px 32px;
+}
+
+.original-template-root.lang-tamil .entry-hint {
+  font-family: 'Noto Sans Tamil', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+/* Home / Hero Section */
+.original-template-root.lang-tamil .eyebrow {
+  font-family: 'Noto Sans Tamil', sans-serif;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+
+.original-template-root.lang-tamil .hero-copy {
+  font-family: 'Noto Serif Tamil', serif;
+  font-size: clamp(16px, 2.6vw, 22px);
+  line-height: 1.45;
+  font-weight: 500;
+  max-width: 620px;
+}
+
+.original-template-root.lang-tamil .names {
+  line-height: 1.15;
+  margin: 6px 0;
 }
 
 .original-template-root.lang-tamil .names .name-kiruba,
 .original-template-root.lang-tamil .names .name-bhavya {
-  font-family: 'Noto Serif Tamil', 'Playfair Display', serif;
-  font-size: clamp(52px, 10vw, 84px);
-  font-weight: 700;
-  line-height: 1.15;
+  font-family: 'Noto Serif Tamil', serif;
+  font-size: clamp(34px, 6.2vw, 52px);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: 0.5px;
 }
 
 .original-template-root.lang-tamil .names .weds {
   font-family: 'Noto Serif Tamil', serif;
-  font-size: 0.28em;
+  font-size: 0.32em;
+  font-weight: 600;
   letter-spacing: 2px;
+  margin: 8px 0 6px;
+}
+
+.original-template-root.lang-tamil .parents {
+  font-family: 'Noto Sans Tamil', sans-serif;
+  font-size: clamp(13px, 2.1vw, 16px);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+}
+
+.original-template-root.lang-tamil .hero-date {
+  font-family: 'Noto Sans Tamil', sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.original-template-root.lang-tamil .discover {
+  font-family: 'Noto Sans Tamil', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+/* Scratch Card Date Section */
+.original-template-root.lang-tamil .section-title {
+  font-family: 'Noto Serif Tamil', serif;
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 600;
+}
+
+.original-template-root.lang-tamil .sub {
+  font-family: 'Noto Sans Tamil', sans-serif;
+  font-size: clamp(13px, 2.2vw, 17px);
+  font-weight: 400;
+  font-style: normal;
+}
+
+.original-template-root.lang-tamil .scratch-day {
+  font-family: 'Noto Serif Tamil', serif;
+  font-size: 19px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.original-template-root.lang-tamil .scratch-tip {
+  font-family: 'Noto Sans Tamil', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+/* Timeline & Engagement Section */
+.original-template-root.lang-tamil .timeline-title {
+  font-family: 'Noto Serif Tamil', serif;
+  font-size: clamp(24px, 4.2vw, 36px);
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+
+.original-template-root.lang-tamil .timeline-card h3 {
+  font-family: 'Noto Serif Tamil', serif;
+  font-size: clamp(26px, 4.5vw, 38px);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.original-template-root.lang-tamil .timeline-meta {
+  font-family: 'Noto Sans Tamil', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.original-template-root.lang-tamil .timeline-time {
+  font-family: 'Noto Sans Tamil', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.original-template-root.lang-tamil .timeline-location {
+  font-family: 'Noto Sans Tamil', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.original-template-root.lang-tamil .timeline-btn {
+  font-family: 'Noto Sans Tamil', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Countdown Section */
+.original-template-root.lang-tamil .count-panel .eyebrow {
+  letter-spacing: 1px;
+}
+
+.original-template-root.lang-tamil .count-title {
+  font-family: 'Noto Serif Tamil', serif;
+  font-size: clamp(24px, 4.2vw, 36px);
+  font-weight: 600;
+}
+
+.original-template-root.lang-tamil .count-sub {
+  font-family: 'Noto Sans Tamil', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.original-template-root.lang-tamil .count-label {
+  font-family: 'Noto Sans Tamil', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.original-template-root.lang-tamil .count-date {
+  font-family: 'Noto Sans Tamil', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+
+/* Guest Note Section */
+.original-template-root.lang-tamil .guest-kicker {
+  font-family: 'Noto Sans Tamil', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.original-template-root.lang-tamil .guest-title {
+  font-family: 'Noto Serif Tamil', serif;
+  font-size: clamp(26px, 4.5vw, 38px);
+  font-weight: 600;
+}
+
+.original-template-root.lang-tamil .guest-sub {
+  font-family: 'Noto Sans Tamil', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.original-template-root.lang-tamil .guest-message {
+  font-family: 'Noto Serif Tamil', serif;
+  font-size: clamp(15px, 2.4vw, 19px);
+  font-weight: 400;
+  line-height: 1.75;
+  max-width: 640px;
+}
+
+.original-template-root.lang-tamil .signature-tag {
+  font-family: 'Noto Sans Tamil', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .original-template-root.lang-tamil .signature-names {
   font-family: 'Noto Serif Tamil', serif;
-  font-size: clamp(34px, 6vw, 48px);
-  font-weight: 700;
+  font-size: clamp(24px, 4vw, 34px);
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+/* Mobile Tweaks for Tamil */
+@media (max-width: 700px) {
+  .original-template-root.lang-tamil .hero-copy {
+    font-size: clamp(15px, 4.4vw, 19px);
+    line-height: 1.45;
+  }
+
+  .original-template-root.lang-tamil .names .name-kiruba,
+  .original-template-root.lang-tamil .names .name-bhavya {
+    font-size: clamp(30px, 8.5vw, 42px);
+  }
+
+  .original-template-root.lang-tamil .parents {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .original-template-root.lang-tamil .timeline-card h3 {
+    font-size: 26px;
+  }
+
+  .original-template-root.lang-tamil .guest-message {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .original-template-root.lang-tamil .signature-names {
+    font-size: 24px;
+  }
 }
 </style>
