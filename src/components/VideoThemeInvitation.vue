@@ -743,13 +743,14 @@ section.reveal-section.in-view > * {
   position: relative;
   z-index: 2;
   width: min(920px, 92vw);
-  padding: 54px 24px;
-  border: 1px solid rgba(178, 132, 48, 0.55);
+  padding: 50px 24px 44px;
+  border: 1px solid rgba(220, 180, 105, 0.65);
   border-radius: 34px;
-  background: rgba(255, 249, 237, 0.82);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  box-shadow: 0 22px 70px rgba(39, 44, 60, 0.20);
+  /* Translucent glass so background painting shows through beautifully */
+  background: rgba(255, 249, 237, 0.42);
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(2.5px);
+  box-shadow: 0 18px 60px rgba(39, 44, 60, 0.16);
 }
 
 .eyebrow {
@@ -759,54 +760,63 @@ section.reveal-section.in-view > * {
   text-transform: uppercase;
   color: #173a63;
   font-weight: 700;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.85);
 }
 
 .hero-copy {
   font-family: 'Playfair Display', serif;
   font-size: clamp(22px, 4vw, 36px);
   line-height: 1.3;
-  margin: 20px auto 16px;
+  margin: 18px auto 14px;
   max-width: 740px;
-  color: #234b72;
+  color: #3b1425;
   font-weight: 600;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
 }
 
 .names {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(44px, 8.5vw, 76px);
-  font-weight: 800;
-  letter-spacing: 1px;
-  line-height: 1.1;
-  margin: 16px 0;
+  font-family: 'Allura', cursive;
+  font-size: clamp(74px, 14vw, 128px);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  line-height: 0.88;
+  margin: 8px 0;
 }
 
 .name-kiruba {
   display: block;
-  font-family: 'Playfair Display', serif;
-  font-weight: 800;
-  color: #123052;
-  letter-spacing: 1.5px;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+  font-family: 'Allura', cursive;
+  font-weight: 400;
+  color: #730707;
+  letter-spacing: 0.5px;
+  text-shadow: 
+    0 1px 0 rgba(255, 255, 255, 0.95),
+    0 2px 6px rgba(255, 255, 255, 0.9),
+    0 6px 20px rgba(115, 7, 7, 0.22);
 }
 
 .name-bhavya {
   display: block;
-  font-family: 'Playfair Display', serif;
-  font-weight: 800;
-  color: #123052;
-  letter-spacing: 1.5px;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+  font-family: 'Allura', cursive;
+  font-weight: 400;
+  color: #730707;
+  letter-spacing: 0.5px;
+  text-shadow: 
+    0 1px 0 rgba(255, 255, 255, 0.95),
+    0 2px 6px rgba(255, 255, 255, 0.9),
+    0 6px 20px rgba(115, 7, 7, 0.22);
 }
 
 .names .weds {
   display: block;
   font-family: 'Playfair Display', serif;
-  font-size: 0.28em;
+  font-size: 0.26em;
   font-weight: 700;
   letter-spacing: 5px;
-  margin: 10px 0 8px;
-  color: #a36f1c;
+  margin: 10px 0 6px;
+  color: #9a6a18;
   text-transform: uppercase;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
 }
 
 .parents {
@@ -815,8 +825,9 @@ section.reveal-section.in-view > * {
   font-weight: 600;
   line-height: 1.35;
   letter-spacing: 0.3px;
-  color: #3f5365;
-  margin: 8px auto 14px;
+  color: #2b1f1a;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95);
+  margin: 6px auto 12px;
 }
 
 .parents span {
@@ -1330,13 +1341,13 @@ section.reveal-section.in-view > * {
 @media (max-width: 700px) {
   .hero-inner {
     width: calc(100vw - 24px);
-    padding: 42px 14px;
+    padding: 38px 14px 34px;
     border-radius: 26px;
-    background: rgba(255, 249, 237, 0.84);
-    border: 1px solid rgba(178, 132, 48, 0.55);
-    box-shadow: 0 16px 50px rgba(39, 44, 60, 0.18);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    background: rgba(255, 249, 237, 0.44);
+    border: 1px solid rgba(220, 180, 105, 0.65);
+    box-shadow: 0 16px 50px rgba(39, 44, 60, 0.16);
+    backdrop-filter: blur(2.5px);
+    -webkit-backdrop-filter: blur(2.5px);
   }
 
   .eyebrow {
@@ -1350,14 +1361,15 @@ section.reveal-section.in-view > * {
   }
 
   .names {
-    font-size: clamp(42px, 11vw, 64px);
-    line-height: 1.1;
+    font-size: clamp(64px, 18vw, 98px);
+    line-height: 0.88;
+    margin: 8px 0;
   }
 
   .names .weds {
-    font-size: 0.28em;
+    font-size: 0.24em;
     letter-spacing: 4px;
-    margin: 8px 0 6px;
+    margin: 6px 0 4px;
   }
 
   .parents {
