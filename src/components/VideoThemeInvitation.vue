@@ -202,7 +202,47 @@ const onPointerUp = () => {
 }
 
 // ══════════════════════════════════════════════════════════════════════════
-// 4. SCROLL REVEAL OBSERVER
+// 4. VENUE LOCATION & ADD TO CALENDAR
+// ══════════════════════════════════════════════════════════════════════════
+const googleMapsLocationUrl = 'https://maps.app.goo.gl/8r8R7PVDQ1oatWbVA'
+
+const googleCalendarUrl = 'https://calendar.google.com/calendar/render?action=TEMPLATE' +
+  '&text=' + encodeURIComponent('Engagement Ceremony – M. Kirubakaran & N. Bhavya') +
+  '&dates=20261025T050000Z%2F20261025T063000Z' +
+  '&details=' + encodeURIComponent('Auspicious Engagement Ceremony of M. Kirubakaran and N. Bhavya. Together with our families, we cordially invite you to celebrate with us.') +
+  '&location=' + encodeURIComponent('Sornam Arumugam Marriage Hall, Tittagudi, Cuddalore District, Tamil Nadu – 606106')
+
+const downloadIcsCalendar = () => {
+  const icsData = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//Kirubakaran and Bhavya//Engagement Ceremony//EN',
+    'CALSCALE:GREGORIAN',
+    'METHOD:PUBLISH',
+    'BEGIN:VEVENT',
+    'UID:engagement-kirubakaran-bhavya-20261025@invitesend.com',
+    'DTSTAMP:20261007T120000Z',
+    'DTSTART:20261025T050000Z',
+    'DTEND:20261025T063000Z',
+    'SUMMARY:Engagement Ceremony – M. Kirubakaran & N. Bhavya',
+    'DESCRIPTION:Auspicious Engagement Ceremony of M. Kirubakaran and N. Bhavya. Together with our families\\, we cordially invite you to celebrate with us.',
+    'LOCATION:Sornam Arumugam Marriage Hall\\, Tittagudi\\, Cuddalore District\\, Tamil Nadu – 606106',
+    'STATUS:CONFIRMED',
+    'END:VEVENT',
+    'END:VCALENDAR'
+  ].join('\r\n')
+
+  const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' })
+  const link = document.createElement('a')
+  link.href = window.URL.createObjectURL(blob)
+  link.setAttribute('download', 'engagement-kirubakaran-bhavya.ics')
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// 5. SCROLL REVEAL OBSERVER
 // ══════════════════════════════════════════════════════════════════════════
 let revealObserver = null
 
@@ -293,10 +333,10 @@ onUnmounted(() => {
     <main id="main" :class="{ visible: isMainVisible }">
 
       <!-- 1. HERO SECTION -->
-      <section class="hero" aria-label="Wedding invitation">
+      <section class="hero" aria-label="Engagement invitation">
         <div class="hero-inner">
           <div class="eyebrow">Together with our families</div>
-          <p class="hero-copy">We joyfully invite you to celebrate the engagement and wedding of</p>
+          <p class="hero-copy">We cordially invite you to celebrate the auspicious engagement of</p>
 
           <div class="names">
             <span class="name-kiruba">Kirubakaran</span>
@@ -347,27 +387,27 @@ onUnmounted(() => {
         </div>
       </section>
 
-      <!-- 3. WEDDING TIMELINE SECTION -->
+      <!-- 3. ENGAGEMENT TIMELINE & EVENT SECTION -->
       <section class="reveal-section timeline" id="timeline">
         <div class="timeline-inner">
-          <h2 class="section-title timeline-title">Wedding Timeline</h2>
-          <div class="sub">Two beautiful moments · One forever</div>
+          <h2 class="section-title timeline-title">Engagement Ceremony</h2>
+          <div class="sub">A sacred beginning · Two souls united in love</div>
 
           <div class="timeline-journey">
 
-            <!-- Event 1: Engagement -->
+            <!-- Event: Engagement Ceremony -->
             <article class="timeline-event">
               <div class="timeline-photo">
-                <img src="/images/original-assets/timeline-reception.jpg" alt="Engagement celebration" />
+                <img src="/images/original-assets/timeline-reception.jpg" alt="Engagement ceremony celebration" />
               </div>
               <div class="timeline-card">
-                <h3>Engagement</h3>
+                <h3>Engagement Ceremony</h3>
                 <div class="timeline-meta">
                   <span>Sunday • 25th October 2026</span>
                 </div>
-                <div class="timeline-time">10:30 AM – 12:00 PM</div>
+                <div class="timeline-time">10:30 AM – 12:00 PM • Auspicious Muhurtham</div>
                 <div class="timeline-location">
-                  Sornam Arumugam Marriage Hall<br>
+                  <strong>Sornam Arumugam Marriage Hall</strong><br>
                   Tittagudi, Cuddalore District, Tamil Nadu – 606106, India
                 </div>
                 <div class="timeline-actions">
@@ -375,54 +415,25 @@ onUnmounted(() => {
                     class="timeline-btn" 
                     target="_blank" 
                     rel="noopener" 
-                    href="https://maps.app.goo.gl/8r8R7PVDQ1oatWbVA"
+                    :href="googleMapsLocationUrl"
                   >
-                    ⌖ View Location
+                    📍 View on Google Maps
                   </a>
                   <a 
                     class="timeline-btn" 
                     target="_blank" 
                     rel="noopener" 
-                    href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Engagement+%E2%80%93+Kirubakaran+%26+Bhavya&amp;dates=20261025T050000Z%2F20261025T063000Z&amp;details=Auspicious+Engagement+Celebration+for+Kirubakaran+and+Bhavya&amp;location=Sornam+Arumugam+Marriage+Hall%2C+Tittagudi%2C+Cuddalore+District%2C+Tamil+Nadu"
+                    :href="googleCalendarUrl"
                   >
-                    ♡ Add to Calendar
+                    📅 Google Calendar
                   </a>
-                </div>
-              </div>
-            </article>
-
-            <!-- Event 2: Wedding -->
-            <article class="timeline-event">
-              <div class="timeline-photo">
-                <img src="/images/original-assets/timeline-wedding.jpg" alt="Wedding ceremony" />
-              </div>
-              <div class="timeline-card">
-                <h3>Wedding</h3>
-                <div class="timeline-meta">
-                  <span>Sunday • 25th October 2026</span>
-                </div>
-                <div class="timeline-time">Auspicious Muhurtham</div>
-                <div class="timeline-location">
-                  Sornam Arumugam Marriage Hall<br>
-                  Tittagudi, Cuddalore District, Tamil Nadu – 606106, India
-                </div>
-                <div class="timeline-actions">
-                  <a 
-                    class="timeline-btn" 
-                    target="_blank" 
-                    rel="noopener" 
-                    href="https://maps.app.goo.gl/8r8R7PVDQ1oatWbVA"
+                  <button 
+                    type="button" 
+                    class="timeline-btn ics-btn" 
+                    @click="downloadIcsCalendar"
                   >
-                    ⌖ View Location
-                  </a>
-                  <a 
-                    class="timeline-btn" 
-                    target="_blank" 
-                    rel="noopener" 
-                    href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Wedding+%E2%80%93+Kirubakaran+%26+Bhavya&amp;dates=20261025T050000Z%2F20261025T063000Z&amp;details=Auspicious+Wedding+Celebration+for+Kirubakaran+and+Bhavya&amp;location=Sornam+Arumugam+Marriage+Hall%2C+Tittagudi%2C+Cuddalore+District%2C+Tamil+Nadu"
-                  >
-                    ♡ Add to Calendar
-                  </a>
+                    🗓 Add to Calendar (Apple / Outlook)
+                  </button>
                 </div>
               </div>
             </article>
@@ -949,7 +960,7 @@ section.reveal-section.in-view > * {
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
-   3. WEDDING TIMELINE SECTION
+   3. ENGAGEMENT TIMELINE SECTION
    ══════════════════════════════════════════════════════════════════════════ */
 .timeline {
   background: linear-gradient(rgba(13, 28, 61, 0.48), rgba(12, 24, 52, 0.66)),
@@ -989,15 +1000,7 @@ section.reveal-section.in-view > * {
 }
 
 .timeline-journey:before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 8px;
-  bottom: 12px;
-  width: 2px;
-  background: linear-gradient(#f1d58b, #fff1c5, #c99a3e);
-  transform: translateX(-50%);
-  box-shadow: 0 0 10px rgba(255, 220, 137, 0.55);
+  display: none;
 }
 
 .timeline-event {
@@ -1105,15 +1108,18 @@ section.reveal-section.in-view > * {
   background: linear-gradient(135deg, #fff7e5, #f3dfad);
   color: #234b72;
   text-decoration: none;
+  font-family: inherit;
   font-size: 11px;
   letter-spacing: 0.6px;
   font-weight: 600;
-  transition: background 0.25s, transform 0.2s;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.2s, box-shadow 0.2s;
 }
 
 .timeline-btn:hover {
   background: #fff5df;
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(201, 154, 62, 0.35);
 }
 
 .timeline-event:last-child {
