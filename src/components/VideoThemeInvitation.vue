@@ -16,6 +16,9 @@ const translations = {
     openInvitationBtn: 'OPEN INVITATION',
     entryHint: 'Tap to open the doors',
 
+    // Sacred Invocations Header Quote (Shown only after door opens)
+    headerQuote: 'நமசிவாய எனும் மங்கள நாதத்துடன்… சிவனும் சக்தியும் சாட்சியாக, இரு உள்ளங்கள் இணையும் திருநாள்…',
+
     // Hero Section
     togetherWithFamilies: 'Together with our families',
     heroInviteCopy: 'We cordially invite you to celebrate the auspicious engagement of',
@@ -79,6 +82,9 @@ const translations = {
     entryKickerSub: 'எங்கள் நிச்சயதார்த்த விழாவிற்கு',
     openInvitationBtn: 'அழைப்பிதழை திறக்கவும்',
     entryHint: 'கதவைத் தட்டி திறக்கவும்',
+
+    // Sacred Invocations Header Quote (Shown only after door opens)
+    headerQuote: 'நமசிவாய எனும் மங்கள நாதத்துடன்… சிவனும் சக்தியும் சாட்சியாக, இரு உள்ளங்கள் இணையும் திருநாள்…',
 
     // Hero Section
     togetherWithFamilies: 'எங்கள் குடும்பத்தாருடன் இணைந்து',
@@ -487,6 +493,12 @@ onUnmounted(() => {
 
       <!-- 1. HERO SECTION -->
       <section class="hero" :aria-label="t.timelineTitle">
+        <!-- Sacred Invocations Top Header Quote (Visible only after door opened) -->
+        <div v-if="isEntryOpen" class="hero-quote-banner" role="banner">
+          <span class="quote-symbol">🕉️</span>
+          <p class="quote-text">{{ t.headerQuote }}</p>
+        </div>
+
         <div class="hero-inner">
           <div class="eyebrow">{{ t.togetherWithFamilies }}</div>
           <p class="hero-copy">{{ t.heroInviteCopy }}</p>
@@ -919,13 +931,63 @@ section.reveal-section.in-view > * {
    1. HERO SECTION
    ══════════════════════════════════════════════════════════════════════════ */
 .hero {
-  display: grid;
-  place-items: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   color: var(--ink);
   background: url('/images/original-assets/hero-new.jpg') center top / cover no-repeat;
-  padding: 30px 0;
+  padding: 40px 16px 30px;
   min-height: 100vh;
+}
+
+/* Sacred Invocations Top Header Quote (Visible only after door opened) */
+.hero-quote-banner {
+  position: relative;
+  z-index: 5;
+  margin: 0 auto 20px;
+  max-width: min(92vw, 760px);
+  padding: 8px 22px;
+  background: rgba(35, 12, 10, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(220, 180, 105, 0.55);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28), 0 0 16px rgba(220, 180, 105, 0.18);
+  animation: heroQuoteFadeDown 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-quote-banner .quote-symbol {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.hero-quote-banner .quote-text {
+  font-family: 'Noto Serif Tamil', Georgia, serif;
+  font-size: clamp(12px, 2.1vw, 14.5px);
+  font-weight: 500;
+  color: #fff1d0;
+  letter-spacing: 0.3px;
+  line-height: 1.45;
+  margin: 0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes heroQuoteFadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-inner {
@@ -1756,6 +1818,13 @@ section.reveal-section.in-view > * {
 }
 
 /* Home / Hero Section */
+.original-template-root.lang-tamil .hero-quote-banner .quote-text {
+  font-family: 'Noto Serif Tamil', serif;
+  font-size: clamp(12px, 2vw, 14px);
+  font-weight: 500;
+  line-height: 1.45;
+}
+
 .original-template-root.lang-tamil .eyebrow {
   font-family: 'Noto Sans Tamil', sans-serif;
   font-size: 11px;
@@ -1966,6 +2035,17 @@ section.reveal-section.in-view > * {
 
 /* Mobile Tweaks for Tamil */
 @media (max-width: 700px) {
+  .hero-quote-banner {
+    padding: 7px 14px;
+    margin-bottom: 16px;
+    border-radius: 18px;
+  }
+
+  .original-template-root.lang-tamil .hero-quote-banner .quote-text {
+    font-size: 11.5px;
+    line-height: 1.4;
+  }
+
   .original-template-root.lang-tamil .hero-copy {
     font-size: clamp(15px, 4.4vw, 19px);
     line-height: 1.45;
