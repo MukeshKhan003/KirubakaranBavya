@@ -19,11 +19,13 @@ const translations = {
     // Hero Section
     togetherWithFamilies: 'Together with our families',
     heroInviteCopy: 'We cordially invite you to celebrate the auspicious engagement of',
+    groomParents: 'Mr. K.M. Mohan & Mrs. M. Akila Priya',
+    groomRelation: 'Son of',
     groomName: 'Kirubakaran',
-    groomParents: 'S/o Mr. K.M. Mohan & Mrs. M. Akila Priya',
     weds: 'weds',
+    brideParents: 'Mr. R. Nakkeeran & Mrs. N. Selvarani',
+    brideRelation: 'Daughter of',
     brideName: 'Bhavya',
-    brideParents: 'D/o Mr. R. Nakkeeran & Mrs. N. Selvarani',
     heroDate: '25 • OCTOBER • 2026',
     scrollPrompt: '↓ SCROLL TO DISCOVER OUR STORY ↓',
 
@@ -81,11 +83,13 @@ const translations = {
     // Hero Section
     togetherWithFamilies: 'எங்கள் குடும்பத்தாருடன் இணைந்து',
     heroInviteCopy: 'அன்புடன் எங்களது சுப நிச்சயதார்த்த விழாவிற்கு தங்களை அழைக்கிறோம்',
+    groomParents: 'திரு. K.M. மோகன் & திருமதி. M. அகில பிரியா',
+    groomRelation: 'அவர்களின் புதல்வருமான',
     groomName: 'கிருபாகரன்',
-    groomParents: 'மகன்: திரு. K.M. மோகன் & திருமதி. M. அகில பிரியா',
     weds: 'இணையும்',
+    brideParents: 'திரு. R. நக்கீரன் & திருமதி. N. செல்வராணி',
+    brideRelation: 'அவர்களின் புதல்வியுமான',
     brideName: 'பவ்யா',
-    brideParents: 'மகள்: திரு. R. நக்கீரன் & திருமதி. N. செல்வராணி',
     heroDate: '25 • அக்டோபர் • 2026',
     scrollPrompt: '↓ எங்களின் கதையைக் காண கீழே செல்லவும் ↓',
 
@@ -488,15 +492,23 @@ onUnmounted(() => {
           <p class="hero-copy">{{ t.heroInviteCopy }}</p>
 
           <div class="names">
-            <span class="name-kiruba">{{ t.groomName }}</span>
-            <div class="parents">
+            <div class="parents parents-groom">
               <span>{{ t.groomParents }}</span>
             </div>
+            <div class="relation-text">
+              <span>({{ t.groomRelation }})</span>
+            </div>
+            <span class="name-kiruba">{{ t.groomName }}</span>
+
             <span class="weds">{{ t.weds }}</span>
-            <span class="name-bhavya">{{ t.brideName }}</span>
-            <div class="parents">
+
+            <div class="parents parents-bride">
               <span>{{ t.brideParents }}</span>
             </div>
+            <div class="relation-text">
+              <span>({{ t.brideRelation }})</span>
+            </div>
+            <span class="name-bhavya">{{ t.brideName }}</span>
           </div>
 
           <div class="hero-date">{{ t.heroDate }}</div>
@@ -1004,10 +1016,25 @@ section.reveal-section.in-view > * {
   letter-spacing: 0.3px;
   color: #2b1f1a;
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95);
-  margin: 6px auto 12px;
+  margin: 6px auto 4px;
 }
 
 .parents span {
+  display: block;
+}
+
+.relation-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(15px, 2.4vw, 19px);
+  font-style: italic;
+  font-weight: 500;
+  color: #7d5930;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95);
+  margin: 2px auto 6px;
+}
+
+.relation-text span {
   display: block;
 }
 
@@ -1772,6 +1799,17 @@ section.reveal-section.in-view > * {
   font-weight: 500;
   line-height: 1.4;
   letter-spacing: 0.2px;
+  margin: 6px auto 2px;
+}
+
+.original-template-root.lang-tamil .relation-text {
+  font-family: 'Noto Sans Tamil', sans-serif;
+  font-size: clamp(12px, 1.9vw, 14px);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+  color: #7d5930;
+  margin: 2px auto 6px;
 }
 
 .original-template-root.lang-tamil .hero-date {
@@ -1940,6 +1978,11 @@ section.reveal-section.in-view > * {
 
   .original-template-root.lang-tamil .parents {
     font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .original-template-root.lang-tamil .relation-text {
+    font-size: 12px;
     line-height: 1.4;
   }
 
