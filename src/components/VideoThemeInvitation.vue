@@ -3,9 +3,9 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 // ══════════════════════════════════════════════════════════════════════════
 // 0. MULTILINGUAL TRANSLATIONS (ENGLISH & TAMIL)
-// Default: English. If URL contains /lang-tm or ?lang=tm, switches to Tamil.
+// Default: Tamil. If URL contains /lang-en or ?lang=en, switches to English.
 // ══════════════════════════════════════════════════════════════════════════
-const currentLang = ref('en')
+const currentLang = ref('tm')
 
 const translations = {
   en: {
@@ -147,17 +147,17 @@ const translations = {
 // Active translation accessor
 const t = computed(() => translations[currentLang.value] || translations.en)
 
-// Synchronize Language from URL (/lang-tm or /lang-en)
-// Defaults to English on initial page load unless /lang-tm is specified
+// Synchronize Language from URL (/lang-en or /lang-tm)
+// Defaults to Tamil on initial page load unless English (/lang-en or ?lang=en) is requested
 const syncLangFromUrl = () => {
   if (typeof window === 'undefined') return
   const path = window.location.pathname.toLowerCase()
   const search = window.location.search.toLowerCase()
   const hash = window.location.hash.toLowerCase()
-  if (path.includes('lang-tm') || search.includes('lang=tm') || hash.includes('lang-tm')) {
-    currentLang.value = 'tm'
-  } else {
+  if (path.includes('lang-en') || search.includes('lang=en') || hash.includes('lang-en')) {
     currentLang.value = 'en'
+  } else {
+    currentLang.value = 'tm'
   }
 }
 
