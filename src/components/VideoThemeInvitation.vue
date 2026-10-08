@@ -907,24 +907,30 @@ section.reveal-section.in-view > * {
 
 .music-btn {
   position: fixed;
-  right: 16px;
-  top: 16px;
-  z-index: 50;
-  width: 36px;
-  height: 36px;
+  right: 18px;
+  bottom: 20px;
+  z-index: 100;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  border: 1px solid rgba(245, 218, 157, 0.75);
-  background: rgba(39, 20, 10, 0.65);
+  border: 1.5px solid rgba(245, 218, 157, 0.85);
+  background: rgba(30, 10, 8, 0.88);
   color: #f5d58c;
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   cursor: pointer;
-  font-size: 16px;
+  font-size: 19px;
   line-height: 1;
-  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.5), 0 0 14px rgba(245, 218, 157, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.music-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.6), 0 0 18px rgba(245, 218, 157, 0.4);
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
