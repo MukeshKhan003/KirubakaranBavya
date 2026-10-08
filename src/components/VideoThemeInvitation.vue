@@ -939,42 +939,45 @@ section.reveal-section.in-view > * {
   text-align: center;
   color: var(--ink);
   background: url('/images/original-assets/hero-new.jpg') center top / cover no-repeat;
-  padding: 40px 16px 30px;
+  padding: 70px 16px 30px;
   min-height: 100vh;
 }
 
-/* Sacred Invocations Top Header Quote (Visible only after door opened) */
+/* Sacred Invocations Top Header Quote (Pinned to the very top, visible only after door opened) */
 .hero-quote-banner {
-  position: relative;
-  z-index: 5;
-  margin: 0 auto 20px;
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 25;
+  width: max-content;
   max-width: min(92vw, 760px);
-  padding: 8px 22px;
-  background: rgba(35, 12, 10, 0.88);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(220, 180, 105, 0.55);
+  padding: 6px 20px;
+  background: rgba(30, 8, 8, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(220, 180, 105, 0.6);
   border-radius: 999px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28), 0 0 16px rgba(220, 180, 105, 0.18);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 16px rgba(220, 180, 105, 0.2);
   animation: heroQuoteFadeDown 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .hero-quote-banner .quote-symbol {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1;
 }
 
 .hero-quote-banner .quote-text {
   font-family: 'Noto Serif Tamil', Georgia, serif;
-  font-size: clamp(12px, 2.1vw, 14.5px);
+  font-size: clamp(11.5px, 1.9vw, 13.5px);
   font-weight: 500;
-  color: #fff1d0;
+  color: #fff2d2;
   letter-spacing: 0.3px;
-  line-height: 1.45;
+  line-height: 1.4;
   margin: 0;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
@@ -982,11 +985,11 @@ section.reveal-section.in-view > * {
 @keyframes heroQuoteFadeDown {
   0% {
     opacity: 0;
-    transform: translateY(-16px);
+    transform: translate(-50%, -18px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(-50%, 0);
   }
 }
 
@@ -2035,15 +2038,22 @@ section.reveal-section.in-view > * {
 
 /* Mobile Tweaks for Tamil */
 @media (max-width: 700px) {
+  .hero {
+    padding-top: 60px;
+  }
+
   .hero-quote-banner {
-    padding: 7px 14px;
-    margin-bottom: 16px;
-    border-radius: 18px;
+    top: 10px;
+    padding: 5px 12px;
+    width: calc(100% - 24px);
+    max-width: 380px;
+    border-radius: 999px;
+    gap: 6px;
   }
 
   .original-template-root.lang-tamil .hero-quote-banner .quote-text {
-    font-size: 11.5px;
-    line-height: 1.4;
+    font-size: 11px;
+    line-height: 1.35;
   }
 
   .original-template-root.lang-tamil .hero-copy {
