@@ -12,63 +12,65 @@ const translations = {
     // Entrance Doors
     entryKickerTop: 'With all our hearts',
     entryTitle: 'You are invited',
-    entryKickerSub: 'to celebrate with us',
+    entryKickerSub: 'to celebrate our wedding',
     openInvitationBtn: 'OPEN INVITATION',
     entryHint: 'Tap to open the doors',
 
     // Sacred Invocations Header Quote (Shown only after door opens)
-    headerQuote: 'நமசிவாய எனும் மங்கள நாதத்துடன்… சிவனும் சக்தியும் சாட்சியாக, இரு உள்ளங்கள் இணையும் திருநாள்…',
+    headerQuote: 'நமச்சிவாய வாழ்க… அன்பும் அறனும் உடைத்தாயின் இல்வாழ்க்கை பண்பும் பயனும் அது… சிவனும் சக்தியும் சாட்சியாக இரு உள்ளங்கள் இணையும் திருமண நன்னாள்…',
 
     // Hero Section
     togetherWithFamilies: 'Together with our families',
-    heroInviteCopy: 'We cordially invite you to celebrate the auspicious engagement of',
+    heroInviteCopy: 'We cordially invite you to celebrate the auspicious wedding ceremony of',
     groomParents: 'Mr. K.M. Mohan & Mrs. M. Akila Priya',
     groomRelation: 'Son of',
-    groomName: 'Kirubakaran',
+    groomName: 'M. Kirubakaran',
+    groomDegree: 'B.E., Mech',
     weds: 'weds',
     brideParents: 'Mr. R. Nakkeeran & Mrs. N. Selvarani',
     brideRelation: 'Daughter of',
-    brideName: 'Bhavya',
-    heroDate: '25 • OCTOBER • 2026',
+    brideName: 'N. Bhavya',
+    brideDegree: 'B.Sc., Agri',
+    heroDate: '20 • NOVEMBER • 2026',
     scrollPrompt: '↓ SCROLL TO DISCOVER OUR STORY ↓',
 
     // Scratch Card Date Section
-    dateSectionTitle: 'Our Special Date',
-    scratchPromptSub: 'Scratch to reveal the date',
-    scratchDay: 'SUNDAY',
-    scratchDate: '25-10-2026',
-    scratchCanvasLabel: 'Scratch to reveal Sunday, 25-10-2026',
+    dateSectionTitle: 'Our Wedding Date',
+    scratchPromptSub: 'Scratch to reveal the wedding date',
+    scratchDay: 'FRIDAY',
+    scratchDate: '20-11-2026',
+    scratchCanvasLabel: 'Scratch to reveal Friday, 20-11-2026',
     scratchCanvasFoil: '✦ Scratch here ✦',
-    scratchTip: '✦ Gently reveal our special date ✦',
+    scratchTip: '✦ Gently reveal our wedding date ✦',
 
-    // Engagement Event Section
-    timelineTitle: 'Engagement Ceremony',
-    timelineSub: 'A sacred beginning · Two souls united in love',
-    eventTitle: 'Engagement Ceremony',
-    eventDayDate: 'Sunday • 25th October 2026',
-    eventTime: '10:30 AM – 12:00 PM • Auspicious Muhurtham',
-    venueName: 'Sornam Arumugam Marriage Hall',
-    venueAddress: 'Tittagudi, Cuddalore District, Tamil Nadu – 606106, India',
+    // Wedding Event Section
+    timelineTitle: 'Wedding Ceremony',
+    timelineSub: 'A sacred union · Two souls united in holy matrimony',
+    eventTitle: 'Wedding Ceremony',
+    eventDayDate: 'Friday • 20th November 2026',
+    eventTime: '6:00 AM – 7:29 AM • Auspicious Muhurtham',
+    venueName: 'Periyar Anna Arangam (Marriage Hall)',
+    venueAddress: '286e, Srimushnam Road, Kavarapalayam, Andimadam, Tamil Nadu – 621801',
     viewLocationBtn: '📍 View on Google Maps',
     addToCalendarBtn: '📅 Add to Google Calendar',
 
     // Countdown Section
     countEyebrow: 'Big day is getting closer',
     countTitle: 'Counting Down to Forever',
-    countSub: 'Every second brings us closer to celebrating with you.',
+    countSub: 'Every second brings us closer to celebrating our wedding with you.',
     daysLabel: 'Days',
     hoursLabel: 'Hours',
     minsLabel: 'Minutes',
     secsLabel: 'Seconds',
-    countFooterDate: '25 OCTOBER 2026 · 10:30 AM',
+    countFooterDate: '20 NOVEMBER 2026 · 6:00 AM',
 
     // Guest Note Section
     guestKicker: 'A little note for you',
     guestTitle: 'Dear Guest',
     guestSub: 'From our hearts to yours',
-    guestMessage: 'We found our moment, and now we’re making it a lifetime. Come share the laughter, the love, and the beginning of our forever. As we step into this beautiful new chapter together, your presence, love, and blessings would make our special day even more meaningful and fill our hearts with joy.',
+    guestMessage: 'We found our moment, and now we’re making it a lifetime. Come share the laughter, the love, and the sacred beginning of our marriage. As we step into this beautiful new chapter together, your presence, love, and blessings would make our wedding day truly memorable and fill our hearts with joy.',
     signatureWithLove: 'With love,',
-    signatureNames: 'Kirubakaran & Bhavya',
+    signatureNames: 'M. Kirubakaran & N. Bhavya',
 
     // Footer
     madeWithLove: 'Made with love by',
@@ -79,43 +81,45 @@ const translations = {
     // Entrance Doors
     entryKickerTop: 'இரு உள்ளங்கள் இணையும் திருநாள்',
     entryTitle: 'அன்புடன் அழைக்கிறோம்',
-    entryKickerSub: 'எங்கள் நிச்சயதார்த்த விழாவிற்கு',
+    entryKickerSub: 'எங்கள் திருமண விழாவிற்கு',
     openInvitationBtn: 'அழைப்பிதழை திறக்கவும்',
     entryHint: 'கதவைத் தட்டி திறக்கவும்',
 
     // Sacred Invocations Header Quote (Shown only after door opens)
-    headerQuote: 'நமசிவாய எனும் மங்கள நாதத்துடன்… சிவனும் சக்தியும் சாட்சியாக, இரு உள்ளங்கள் இணையும் திருநாள்…',
+    headerQuote: 'நமச்சிவாய வாழ்க… அன்பும் அறனும் உடைத்தாயின் இல்வாழ்க்கை பண்பும் பயனும் அது… சிவனும் சக்தியும் சாட்சியாக இரு உள்ளங்கள் இணையும் திருமண நன்னாள்…',
 
     // Hero Section
     togetherWithFamilies: 'எங்கள் குடும்பத்தாருடன் இணைந்து',
-    heroInviteCopy: 'அன்புடன் எங்களது சுப நிச்சயதார்த்த விழாவிற்கு தங்களை அழைக்கிறோம்',
+    heroInviteCopy: 'அன்புடன் எங்களது சுப திருமண விழாவிற்கு தங்களை அழைக்கிறோம்',
     groomParents: 'திரு. K.M. மோகன் & திருமதி. M. அகில பிரியா',
     groomRelation: 'அவர்களின் புதல்வருமான',
-    groomName: 'கிருபாகரன்',
+    groomName: 'M. கிருபாகரன்',
+    groomDegree: 'B.E., Mech',
     weds: 'இணையும்',
     brideParents: 'திரு. R. நக்கீரன் & திருமதி. N. செல்வராணி',
     brideRelation: 'அவர்களின் புதல்வியுமான',
-    brideName: 'பவ்யா',
-    heroDate: '25 • அக்டோபர் • 2026',
+    brideName: 'N. பவ்யா',
+    brideDegree: 'B.Sc., Agri',
+    heroDate: '20 • நவம்பர் • 2026',
     scrollPrompt: '↓ எங்களின் கதையைக் காண கீழே செல்லவும் ↓',
 
     // Scratch Card Date Section
-    dateSectionTitle: 'எங்களின் நன்னாள்',
+    dateSectionTitle: 'எங்களின் திருமண நன்னாள்',
     scratchPromptSub: 'தேதியைக் காண உரசவும்',
-    scratchDay: 'ஞாயிற்றுக்கிழமை',
-    scratchDate: '25-10-2026',
-    scratchCanvasLabel: 'தேதியை பார்க்க உரசவும் 25-10-2026',
+    scratchDay: 'வெள்ளிக்கிழமை',
+    scratchDate: '20-11-2026',
+    scratchCanvasLabel: 'தேதியை பார்க்க உரசவும் 20-11-2026',
     scratchCanvasFoil: '✦ இங்கே உரசவும் ✦',
-    scratchTip: '✦ எங்களின் நன்னாளைக் காண உரசவும் ✦',
+    scratchTip: '✦ எங்களின் திருமண நன்னாளைக் காண உரசவும் ✦',
 
-    // Engagement Event Section
-    timelineTitle: 'சுப நிச்சயதார்த்த விழா',
-    timelineSub: 'புனிதமான தொடக்கம் · இரு உள்ளங்களின் சங்கமம்',
-    eventTitle: 'சுப நிச்சயதார்த்த விழா',
-    eventDayDate: 'ஞாயிற்றுக்கிழமை • 25 அக்டோபர் 2026',
-    eventTime: 'காலை 10:30 – நண்பகல் 12:00 • சுப முகூர்த்தம்',
-    venueName: 'சொர்ணம் ஆறுமுகம் திருமண மண்டபம்',
-    venueAddress: 'திட்டக்குடி, கடலூர் மாவட்டம், தமிழ்நாடு – 606106',
+    // Wedding Event Section
+    timelineTitle: 'சுப திருமண விழா',
+    timelineSub: 'புனிதமான திருமுறைத் திருமணம் · இரு உள்ளங்களின் சங்கமம்',
+    eventTitle: 'சுப திருமண விழா',
+    eventDayDate: 'வெள்ளிக்கிழமை • 20 நவம்பர் 2026',
+    eventTime: 'காலை 6:00 – 7:29 மணிக்குள் • சுப முகூர்த்தம்',
+    venueName: 'பெரியார் அண்ணா அரங்கம்',
+    venueAddress: '286e, திருமுட்டம் சாலை, கவரபாளையம், ஆண்டிமடம், தமிழ்நாடு – 621801',
     viewLocationBtn: '📍 வரைபடத்தில் பார்க்க (Maps)',
     addToCalendarBtn: '📅 காலண்டரில் சேர்க்க (Calendar)',
 
@@ -127,15 +131,15 @@ const translations = {
     hoursLabel: 'மணி',
     minsLabel: 'நிமிடம்',
     secsLabel: 'நொடிகள்',
-    countFooterDate: '25 அக்டோபர் 2026 · காலை 10:30',
+    countFooterDate: '20 நவம்பர் 2026 · காலை 6:00',
 
     // Guest Note Section
     guestKicker: 'எங்கள் இதயத்திலிருந்து ஒரு மடல்',
     guestTitle: 'அன்பான விருந்தினரே',
     guestSub: 'எங்கள் இதயத்தின் வாழ்த்துக்கள்',
-    guestMessage: 'இறைவன் அருளால் இரு குடும்பங்களின் சம்மதத்துடன் எங்கள் வாழ்வின் வசந்த காலத்தை துவங்குகிறோம். அன்பும் மகிழ்ச்சியும் நிறைந்த இந்த நன்னாளில் தங்களின் வருகையும் வாழ்த்துக்களும் எங்கள் புதிய வாழ்விற்கு உன்னத ஆசீர்வாதமாக அமையும் என அன்புடன் வேண்டுகிறோம்.',
+    guestMessage: 'இறைவன் அருளால் இரு குடும்பங்களின் சம்மதத்துடன் எங்கள் இல்லற வாழ்வின் வசந்த காலத்தை துவங்குகிறோம். அன்பும் அறனும் நிறைந்த இந்த சுப திருமண நன்னாளில் தங்களின் வருகையும் வாழ்த்துக்களும் எங்கள் புதிய வாழ்விற்கு உன்னத ஆசீர்வாதமாக அமையும் என அன்புடன் வேண்டுகிறோம்.',
     signatureWithLove: 'அன்புடன்,',
-    signatureNames: 'கிருபாகரன் & பவ்யா',
+    signatureNames: 'M. கிருபாகரன் & N. பவ்யா',
 
     // Footer
     madeWithLove: 'அன்புடன் உருவாக்கியது',
@@ -178,9 +182,6 @@ const isMainVisible = ref(false)
 const isPlayingMusic = ref(false)
 const bgm = ref(null)
 
-// 52-second seamless invitation audio excerpt from original reel
-const MUSIC_SEGMENT_END = 52
-
 const openInvitation = () => {
   if (isEntryOpen.value) return
   isEntryOpen.value = true
@@ -205,9 +206,6 @@ const toggleMusic = async () => {
   if (!bgm.value) return
   if (bgm.value.paused) {
     try {
-      if (bgm.value.currentTime >= MUSIC_SEGMENT_END - 0.1) {
-        bgm.value.currentTime = 0
-      }
       await bgm.value.play()
       isPlayingMusic.value = true
     } catch (e) {
@@ -219,20 +217,18 @@ const toggleMusic = async () => {
   }
 }
 
-const onAudioTimeUpdate = () => {
+const onAudioEnded = () => {
   if (!bgm.value) return
-  if (bgm.value.currentTime >= MUSIC_SEGMENT_END - 0.08) {
-    bgm.value.currentTime = 0
-    if (isPlayingMusic.value) {
-      bgm.value.play().catch(() => {})
-    }
+  bgm.value.currentTime = 0
+  if (isPlayingMusic.value) {
+    bgm.value.play().catch(() => {})
   }
 }
 
 // ══════════════════════════════════════════════════════════════════════════
-// 2. LIVE COUNTDOWN TIMER (INDIA TIME TARGET: 25 OCT 2026, 10:30 AM)
+// 2. LIVE COUNTDOWN TIMER (INDIA TIME TARGET: 20 NOV 2026, 6:00 AM)
 // ══════════════════════════════════════════════════════════════════════════
-const targetTime = new Date('2026-10-25T10:30:00+05:30').getTime()
+const targetTime = new Date('2026-11-20T06:00:00+05:30').getTime()
 const countdown = ref({
   days: '000',
   hours: '00',
@@ -373,21 +369,21 @@ const onPointerUp = () => {
 // ══════════════════════════════════════════════════════════════════════════
 // 4. VENUE LOCATION & ADD TO CALENDAR
 // ══════════════════════════════════════════════════════════════════════════
-const googleMapsLocationUrl = 'https://maps.app.goo.gl/8r8R7PVDQ1oatWbVA'
+const googleMapsLocationUrl = 'https://maps.app.goo.gl/rpTajYzSntjSumeT8?g_st=aw'
 
 const googleCalendarUrl = computed(() => {
   const isTm = currentLang.value === 'tm'
   const text = isTm 
-    ? 'சுப நிச்சயதார்த்த விழா – கிருபாகரன் & பவ்யா'
-    : 'Engagement Ceremony – M. Kirubakaran & N. Bhavya'
+    ? 'சுப திருமண விழா – M. கிருபாகரன் & N. பவ்யா'
+    : 'Wedding Ceremony – M. Kirubakaran & N. Bhavya'
   const details = isTm
-    ? 'M. கிருபாகரன் மற்றும் N. பவ்யா ஆகியோரின் சுப நிச்சயதார்த்த விழாவிற்கு எங்கள் குடும்பத்தாருடன் இணைந்து தங்களை அன்போடு அழைக்கிறோம்.'
-    : 'Auspicious Engagement Ceremony of M. Kirubakaran and N. Bhavya. Together with our families, we cordially invite you to celebrate with us.'
-  const location = 'Sornam Arumugam Marriage Hall, Tittagudi, Cuddalore District, Tamil Nadu – 606106'
+    ? 'M. கிருபாகரன், B.E., Mech மற்றும் N. பவ்யா, B.Sc., Agri ஆகியோரின் சுப திருமண விழாவிற்கு எங்கள் குடும்பத்தாருடன் இணைந்து தங்களை அன்போடு அழைக்கிறோம்.'
+    : 'Auspicious Wedding Ceremony of M. Kirubakaran, B.E., Mech and N. Bhavya, B.Sc., Agri. Together with our families, we cordially invite you to celebrate with us.'
+  const location = 'Periyar Anna Arangam (Marriage Hall), 286e, Srimushnam Road, Kavarapalayam, Andimadam, Tamil Nadu – 621801'
 
   return 'https://calendar.google.com/calendar/render?action=TEMPLATE' +
     '&text=' + encodeURIComponent(text) +
-    '&dates=20261025T050000Z%2F20261025T063000Z' +
+    '&dates=20261120T003000Z%2F20261120T020000Z' +
     '&details=' + encodeURIComponent(details) +
     '&location=' + encodeURIComponent(location)
 })
@@ -401,6 +397,10 @@ onMounted(() => {
   syncLangFromUrl()
   if (typeof window !== 'undefined') {
     window.addEventListener('popstate', syncLangFromUrl)
+    if (window.location.search.includes('open') || window.location.hash.includes('open')) {
+      isEntryOpen.value = true
+      isMainVisible.value = true
+    }
   }
 
   updateCountdown()
@@ -446,11 +446,12 @@ onUnmounted(() => {
          ══════════════════════════════════════════════════════════════════════ -->
     <audio 
       ref="bgm" 
-      src="/audio/original_wedding_song.mp3" 
+      src="/audio/wedding-background.mp3" 
       preload="auto" 
       playsinline 
       webkit-playsinline
-      @timeupdate="onAudioTimeUpdate"
+      loop
+      @ended="onAudioEnded"
     ></audio>
 
     <button 
@@ -510,7 +511,10 @@ onUnmounted(() => {
             <div class="relation-text">
               <span>({{ t.groomRelation }})</span>
             </div>
-            <span class="name-kiruba">{{ t.groomName }}</span>
+            <div class="name-block-wrapper">
+              <span class="name-kiruba">{{ t.groomName }}</span>
+              <span v-if="t.groomDegree" class="person-degree">{{ t.groomDegree }}</span>
+            </div>
 
             <span class="weds">{{ t.weds }}</span>
 
@@ -520,7 +524,10 @@ onUnmounted(() => {
             <div class="relation-text">
               <span>({{ t.brideRelation }})</span>
             </div>
-            <span class="name-bhavya">{{ t.brideName }}</span>
+            <div class="name-block-wrapper">
+              <span class="name-bhavya">{{ t.brideName }}</span>
+              <span v-if="t.brideDegree" class="person-degree">{{ t.brideDegree }}</span>
+            </div>
           </div>
 
           <div class="hero-date">{{ t.heroDate }}</div>
@@ -560,7 +567,7 @@ onUnmounted(() => {
         </div>
       </section>
 
-      <!-- 3. ENGAGEMENT TIMELINE & EVENT SECTION -->
+      <!-- 3. WEDDING TIMELINE & EVENT SECTION -->
       <section class="reveal-section timeline" id="timeline">
         <div class="timeline-inner">
           <h2 class="section-title timeline-title">{{ t.timelineTitle }}</h2>
@@ -568,10 +575,10 @@ onUnmounted(() => {
 
           <div class="timeline-journey">
 
-            <!-- Event: Engagement Ceremony -->
+            <!-- Event: Wedding Ceremony -->
             <article class="timeline-event">
               <div class="timeline-photo">
-                <img src="/images/original-assets/timeline-reception.jpg" alt="Engagement ceremony celebration" />
+                <img src="/images/original-assets/timeline-wedding.jpg" alt="Wedding ceremony celebration" />
               </div>
               <div class="timeline-card">
                 <h3>{{ t.eventTitle }}</h3>
@@ -1035,42 +1042,78 @@ section.reveal-section.in-view > * {
 }
 
 .names {
-  font-family: 'Allura', cursive;
-  font-size: clamp(74px, 14vw, 128px);
-  font-weight: 400;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(28px, 4vw, 38px);
+  font-weight: 700;
   letter-spacing: 0.5px;
-  line-height: 0.88;
-  margin: 8px 0;
+  line-height: 1.15;
+  margin: 10px 0;
+}
+
+.name-block-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 4px 0;
+}
+
+.person-degree {
+  display: inline-block;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-size: clamp(12px, 2.2vw, 15px);
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #730707;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(193, 154, 76, 0.65);
+  padding: 2px 12px;
+  border-radius: 999px;
+  vertical-align: middle;
+  line-height: 1.35;
+  box-shadow: 0 2px 6px rgba(115, 7, 7, 0.08);
+  text-shadow: none;
+}
+
+.original-template-root.lang-tamil .person-degree {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-size: clamp(12px, 2.2vw, 15px);
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 2px 10px;
 }
 
 .name-kiruba {
   display: block;
-  font-family: 'Allura', cursive;
-  font-weight: 400;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(26px, 3.8vw, 36px);
+  font-weight: 700;
   color: #730707;
   letter-spacing: 0.5px;
   text-shadow: 
     0 1px 0 rgba(255, 255, 255, 0.95),
     0 2px 6px rgba(255, 255, 255, 0.9),
-    0 6px 20px rgba(115, 7, 7, 0.22);
+    0 6px 20px rgba(115, 7, 7, 0.18);
 }
 
 .name-bhavya {
   display: block;
-  font-family: 'Allura', cursive;
-  font-weight: 400;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(26px, 3.8vw, 36px);
+  font-weight: 700;
   color: #730707;
   letter-spacing: 0.5px;
   text-shadow: 
     0 1px 0 rgba(255, 255, 255, 0.95),
     0 2px 6px rgba(255, 255, 255, 0.9),
-    0 6px 20px rgba(115, 7, 7, 0.22);
+    0 6px 20px rgba(115, 7, 7, 0.18);
 }
 
 .names .weds {
   display: block;
   font-family: 'Playfair Display', serif;
-  font-size: 0.26em;
+  font-size: clamp(13px, 2.2vw, 16px);
   font-weight: 700;
   letter-spacing: 5px;
   margin: 10px 0 6px;
@@ -1111,8 +1154,8 @@ section.reveal-section.in-view > * {
 
 .hero-date {
   font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
-  letter-spacing: 4px;
+  font-size: clamp(18px, 2.6vw, 24px);
+  letter-spacing: 3.5px;
   color: #8f6421;
   margin-top: 22px;
   font-weight: 700;
@@ -1224,7 +1267,7 @@ section.reveal-section.in-view > * {
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
-   3. ENGAGEMENT TIMELINE SECTION
+   3. WEDDING TIMELINE SECTION
    ══════════════════════════════════════════════════════════════════════════ */
 .timeline {
   background: linear-gradient(rgba(13, 28, 61, 0.48), rgba(12, 24, 52, 0.66)),
@@ -1524,11 +1567,13 @@ section.reveal-section.in-view > * {
 }
 
 .signature-names {
-  font-family: 'Allura', cursive;
-  font-size: clamp(40px, 6vw, 56px);
-  color: #9f3547;
-  line-height: 1.1;
-  margin-top: 4px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 700;
+  color: #730707;
+  line-height: 1.25;
+  margin-top: 6px;
+  letter-spacing: 0.5px;
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -1676,15 +1721,25 @@ section.reveal-section.in-view > * {
   }
 
   .names {
-    font-size: clamp(64px, 18vw, 98px);
-    line-height: 0.88;
+    font-size: clamp(26px, 6.5vw, 34px);
+    line-height: 1.15;
     margin: 8px 0;
   }
 
+  .names .name-kiruba,
+  .names .name-bhavya {
+    font-size: clamp(26px, 6.5vw, 34px);
+  }
+
   .names .weds {
-    font-size: 0.24em;
+    font-size: 13px;
     letter-spacing: 4px;
     margin: 6px 0 4px;
+  }
+
+  .hero-date {
+    font-size: clamp(16px, 4.5vw, 20px);
+    letter-spacing: 2.5px;
   }
 
   .parents {
@@ -1892,7 +1947,7 @@ section.reveal-section.in-view > * {
 
 .original-template-root.lang-tamil .hero-date {
   font-family: 'Noto Sans Tamil', sans-serif;
-  font-size: 12px;
+  font-size: clamp(16px, 2.4vw, 22px);
   letter-spacing: 2px;
   font-weight: 600;
 }
@@ -1931,7 +1986,7 @@ section.reveal-section.in-view > * {
   letter-spacing: 1px;
 }
 
-/* Timeline & Engagement Section */
+/* Timeline & Wedding Section */
 .original-template-root.lang-tamil .timeline-title {
   font-family: 'Noto Serif Tamil', serif;
   font-size: clamp(24px, 4.2vw, 36px);
@@ -2084,6 +2139,10 @@ section.reveal-section.in-view > * {
 
   .original-template-root.lang-tamil .timeline-card h3 {
     font-size: 26px;
+  }
+
+  .original-template-root.lang-tamil .hero-date {
+    font-size: clamp(15px, 4.2vw, 19px);
   }
 
   .original-template-root.lang-tamil .guest-message {

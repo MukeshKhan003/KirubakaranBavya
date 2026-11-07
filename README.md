@@ -1,6 +1,6 @@
-# Kirubakaran & Bhavya – Engagement Ceremony Invitation
+# M. Kirubakaran & N. Bhavya – Wedding Ceremony Invitation
 
-A modern, responsive Vue.js wedding/engagement invitation website based on the **Temple Bells & Blessings** architecture from **InviteSend**, faithfully reproducing the exact layout, content, and positioning from `kirubakaranbavya.jpeg`.
+A modern, responsive Vue.js wedding invitation website based on the **Temple Bells & Blessings** architecture from **InviteSend**, faithfully incorporating the official wedding details from `Marriage Invitation.jpeg`.
 
 ## 🪔 Features
 
@@ -11,25 +11,18 @@ A modern, responsive Vue.js wedding/engagement invitation website based on the *
     - Replaces the Murugan watermark from the original template.
     - Matches the exact placement, sizing (`min(85vw, 600px)`), and visual positioning.
     - Includes interactive style switch between **Golden Glow** and **Divine Color Art**.
-- **Exact Reference Content Reproduction (`kirubakaranbavya.jpeg`)**:
-  - Double geometric gold border framing with corner ornaments.
-  - Watercolor white floral foliage accents at top-right and bottom-left.
-  - "TOGETHER WITH OUR FAMILIES"
-  - "WE CORDIALLY INVITE YOU TO THE"
-  - "ENGAGEMENT CEREMONY" with gold diamond sparkle flourish (`✦`).
-  - Central botanical arch monogram crest with initials **`K | B`** (`monogram.png`).
-  - "THE ENGAGEMENT OF"
-  - Couple names: **Kirubakaran** & **Bhavya** with horizontal connector rule.
-  - 3-Column Details Triad Grid:
-    - **DATE**: `25.10.2026`
-    - **TIME**: `10:30 AM – 12:00 PM`
-    - **VENUE**: `Tittagudi, Sornam Arumugam Marriage Hall`
-  - Footer Calligraphy Signature Quote: *"Your presence will make our day more special"*.
+- **Wedding Details from Marriage Invitation**:
+  - "TOGETHER WITH OUR FAMILIES" / "எங்கள் குடும்பத்தாருடன் இணைந்து"
+  - Groom: **M. Kirubakaran, B.E., Mech** / **M. கிருபாகரன், B.E., Mech**
+  - Bride: **N. Bhavya, B.Sc., Agri** / **N. பவ்யா, B.Sc., Agri**
+  - **DATE**: `20.11.2026` (Friday / வெள்ளிக்கிழமை)
+  - **MUHURTHAM TIME**: `6:00 AM – 7:29 AM` (காலை 6:00 – 7:29 மணிக்குள்)
+  - **VENUE**: `Periyar Anna Arangam, Andimadam` / `பெரியார் அண்ணா அரங்கம், ஆண்டிமடம்`
 - **Interactive Wedding Features**:
-  - **Countdown Timer**: Real-time days, hours, minutes, seconds countdown to 25.10.2026 10:30 AM.
-  - **Google Maps Navigation**: One-click navigation to Sornam Arumugam Marriage Hall, Tittagudi.
-  - **Add to Google Calendar**: Direct integration to save the event to Google Calendar.
-  - **Devotional Background Music Player**: Floating audio toggle button playing traditional flute wedding instrumental music (`wedding_flute.mp3`).
+  - **Countdown Timer**: Real-time days, hours, minutes, seconds countdown to 20.11.2026 6:00 AM.
+  - **Google Maps Navigation**: One-click navigation to Periyar Anna Arangam (Marriage Hall), Andimadam (`https://maps.app.goo.gl/rpTajYzSntjSumeT8?g_st=aw`).
+  - **Add to Google Calendar**: Direct integration to save the wedding ceremony to Google Calendar.
+  - **Devotional Background Music Player**: Floating audio toggle button playing traditional wedding music.
   - **Responsive Design**: Optimized for mobile screens, tablets, and wide desktop displays.
 
 ## 🚀 Getting Started

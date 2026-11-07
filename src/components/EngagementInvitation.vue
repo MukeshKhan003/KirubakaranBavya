@@ -10,61 +10,61 @@ const currentLang = ref('tm')
 // Multilingual Translations Dictionary
 const translations = {
   en: {
-    bannerText: 'நமசிவாய எனும் மங்கள நாதத்துடன்… சிவனும் சக்தியும் சாட்சியாக, இரு உள்ளங்கள் இணையும் திருநாள்…',
-    groomName: 'M. KIRUBAKARAN',
+    bannerText: 'நமச்சிவாய வாழ்க… அன்பும் அறனும் உடைத்தாயின் இல்வாழ்க்கை பண்பும் பயனும் அது… சிவனும் சக்தியும் சாட்சியாக இரு உள்ளங்கள் இணையும் திருமண நன்னாள்…',
+    groomName: 'M. KIRUBAKARAN, B.E., Mech',
     connector: '❤',
-    brideName: 'N. BHAVYA',
-    invitationSubtitle: 'Are Inviting You to Their Sacred Engagement',
-    dateFormatted: '25.10.2026',
-    timeFormatted: '10.30AM - 12:00PM',
-    venueFull: 'Sornam Arumugam Marriage Hall, Tittagudi',
-    ceremonyConcluded: "🔔 Ceremony Concluded with Lord Shiva & Goddess Parvati's Divine Blessings",
+    brideName: 'N. BHAVYA, B.Sc., Agri',
+    invitationSubtitle: 'Are Inviting You to Their Sacred Wedding',
+    dateFormatted: '20.11.2026',
+    timeFormatted: '6:00 AM - 7:29 AM',
+    venueFull: 'Periyar Anna Arangam (Marriage Hall), Andimadam',
+    ceremonyConcluded: "🔔 Wedding Ceremony Concluded with Lord Shiva & Goddess Parvati's Divine Blessings",
     // Redesigned Details Section
-    detailsTitle: '🪔 Sacred Engagement Covenant 🪔',
-    detailsDesc: 'Together with our families, we cordially invite you to the auspicious Engagement Ceremony of M. Kirubakaran and N. Bhavya.',
+    detailsTitle: '🪔 Sacred Wedding Matrimony 🪔',
+    detailsDesc: 'Together with our families, we cordially invite you to the auspicious Wedding Ceremony of M. Kirubakaran, B.E., Mech and N. Bhavya, B.Sc., Agri.',
     // Three Segments
     dateLabel: 'Date',
-    dateVal: '25.10.2026',
-    dateSub: 'Sunday',
+    dateVal: '20.11.2026',
+    dateSub: 'Friday',
     timeLabel: 'Time',
-    timeVal: '10.30AM - 12:00PM',
+    timeVal: '6:00 AM - 7:29 AM',
     timeSub: 'Auspicious Muhurtham',
     venueLabel: 'Venue',
-    venueVal: 'Tittagudi, Sornam Arumugam Marriage Hall',
-    venueSub: 'Cuddalore District, Tamil Nadu',
+    venueVal: 'Periyar Anna Arangam, Andimadam',
+    venueSub: '286e, Srimushnam Road, Kavarapalayam',
     openInMapsBtn: 'Open in Maps',
     // Parents Invitation Section
     parentsTitle: 'With Love',
     groomParentsLabel: "Groom's Parents",
     groomParents: 'K.M. Mohan, M. Akila Priya',
     brideParentsLabel: "Bride's Parents",
-    brideParents: 'R. Nakeeran, N. Selvarani',
+    brideParents: 'R. Nakkeeran, N. Selvarani',
     // Bottom Decorative Quote
     bottomQuote: '“Your Presence will make our day more special”'
   },
   tm: {
-    bannerText: 'நமசிவாய எனும் மங்கள நாதத்துடன்… சிவனும் சக்தியும் சாட்சியாக, இரு உள்ளங்கள் இணையும் திருநாள்…',
-    groomName: 'M. கிருபாகரன்',
+    bannerText: 'நமச்சிவாய வாழ்க… அன்பும் அறனும் உடைத்தாயின் இல்வாழ்க்கை பண்பும் பயனும் அது… சிவனும் சக்தியும் சாட்சியாக இரு உள்ளங்கள் இணையும் திருமண நன்னாள்…',
+    groomName: 'M. கிருபாகரன், B.E., Mech',
     connector: '❤',
-    brideName: 'N. பவ்யா',
-    invitationSubtitle: 'தங்களை அன்புடன் எங்களது நிச்சயதார்த்த விழாவிற்கு அழைக்கிறோம்',
-    dateFormatted: '25.10.2026',
-    timeFormatted: 'காலை 10.30 - நண்பகல் 12.00',
-    venueFull: 'சொர்ணம் ஆறுமுகம் திருமண மண்டபம், திட்டக்குடி',
-    ceremonyConcluded: '🔔 சிவ பார்வதி திருவருளுடன் நிச்சயதார்த்த விழா இனிதே நிறைவடைந்தது',
+    brideName: 'N. பவ்யா, B.Sc., Agri',
+    invitationSubtitle: 'தங்களை அன்புடன் எங்களது சுப திருமண விழாவிற்கு அழைக்கிறோம்',
+    dateFormatted: '20.11.2026',
+    timeFormatted: 'காலை 6.00 - 7.29 மணி',
+    venueFull: 'பெரியார் அண்ணா அரங்கம், ஆண்டிமடம்',
+    ceremonyConcluded: '🔔 சிவ பார்வதி திருவருளுடன் திருமண விழா இனிதே நிறைவடைந்தது',
     // Redesigned Details Section
-    detailsTitle: '🪔 சுப நிச்சயதார்த்த விழா 🪔',
-    detailsDesc: 'எங்கள் குடும்பத்தாருடன் இணைந்து, M. கிருபாகரன் மற்றும் N. பவ்யா ஆகியோரின் சுப நிச்சயதார்த்த விழாவிற்கு தங்களை அன்போடு அழைக்கிறோம்.',
+    detailsTitle: '🪔 சுப திருமண விழா 🪔',
+    detailsDesc: 'எங்கள் குடும்பத்தாருடன் இணைந்து, M. கிருபாகரன், B.E., Mech மற்றும் N. பவ்யா, B.Sc., Agri ஆகியோரின் சுப திருமண விழாவிற்கு தங்களை அன்போடு அழைக்கிறோம்.',
     // Three Segments
     dateLabel: 'தேதி',
-    dateVal: '25.10.2026',
-    dateSub: 'ஞாயிற்றுக்கிழமை',
+    dateVal: '20.11.2026',
+    dateSub: 'வெள்ளிக்கிழமை',
     timeLabel: 'நேரம்',
-    timeVal: 'காலை 10.30 - நண்பகல் 12:00',
+    timeVal: 'காலை 6.00 - 7.29 மணிக்குள்',
     timeSub: 'சுப முகூர்த்தம்',
     venueLabel: 'இடம்',
-    venueVal: 'சொர்ணம் ஆறுமுகம் திருமண மண்டபம், திட்டக்குடி',
-    venueSub: 'கடலூர் மாவட்டம், தமிழ்நாடு',
+    venueVal: 'பெரியார் அண்ணா அரங்கம், ஆண்டிமடம்',
+    venueSub: '286e, திருமுட்டம் சாலை, கவரபாளையம்',
     openInMapsBtn: 'வரைபடத்தில் பார்க்க (Maps)',
     // Parents Invitation Section
     parentsTitle: 'அன்புடன்',
@@ -106,7 +106,7 @@ const setLanguage = (lang) => {
 // ══════════════════════════════════════════════════════════════════════════
 // 2. COUNTDOWN TIMER
 // ══════════════════════════════════════════════════════════════════════════
-const eventDateIso = '2026-10-25T10:30:00'
+const eventDateIso = '2026-11-20T06:00:00'
 const countdownText = ref({
   days: '00',
   hours: '00',
@@ -156,7 +156,7 @@ const countdownFormatted = computed(() => {
 // ══════════════════════════════════════════════════════════════════════════
 // 3. BACKGROUND MUSIC (AUTOMATIC PLAYBACK & ICON-ONLY FLOATING BUTTON)
 // ══════════════════════════════════════════════════════════════════════════
-const songUrl = '/audio/wedding_flute.mp3'
+const songUrl = '/audio/wedding-background.mp3'
 const isPlayingMusic = ref(false)
 const audioElement = ref(null)
 
@@ -231,7 +231,7 @@ const toggleMusic = () => {
 // ══════════════════════════════════════════════════════════════════════════
 // 4. EXTERNAL LINKS & LIFECYCLE
 // ══════════════════════════════════════════════════════════════════════════
-const googleMapsLocationUrl = 'https://maps.app.goo.gl/8r8R7PVDQ1oatWbVA'
+const googleMapsLocationUrl = 'https://maps.app.goo.gl/rpTajYzSntjSumeT8?g_st=aw'
 
 // ══════════════════════════════════════════════════════════════════════════
 // 5. TEMPLE DOOR ENTRANCE ANIMATION
